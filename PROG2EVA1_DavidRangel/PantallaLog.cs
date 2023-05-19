@@ -35,7 +35,6 @@ namespace PROG2EVA1_DavidRangel
             StreamReader sr = new StreamReader(ruta);
             String lectura;
             lectura = sr.ReadLine();
-            dataGridView1.ColumnCount = 5;
             while (lectura != null)
             {
                 string[] registro = lectura.Split(';');
@@ -82,7 +81,7 @@ namespace PROG2EVA1_DavidRangel
                     else
                     {
                         //! 18-05: si la primera celda (rut) del registro corresponde al mismo rut que se escribió, se muestra
-                        if (registro[0] == textBox2.Text)
+                        if (registro[0] == textBox2.Text.PadLeft(10, '0'))
                         {
                             dataGridView1.Rows.Add(registro);
                         }

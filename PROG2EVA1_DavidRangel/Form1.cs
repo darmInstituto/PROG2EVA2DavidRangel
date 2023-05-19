@@ -24,7 +24,7 @@ namespace PROG2EVA1_DavidRangel
 
             if (ValidacionRut.validarRut(rut) == true)
             {
-                JuegoMemoria form2 = new JuegoMemoria(rut);
+                JuegoMemoria form2 = new JuegoMemoria(rut.PadLeft(10,'0'));
                 form2.Show();
                 this.Hide();
             }         

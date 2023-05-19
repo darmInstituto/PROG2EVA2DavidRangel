@@ -1,13 +1,22 @@
 rut;inicioSesion;finSesion;accion;accionF
-1-9;18-05-2023 23:47:29;;Inicio de sesion;18-05-2023 23:47:29
-1-9;18-05-2023 23:47:29;;Jugador comenzo una partida;18-05-2023 23:47:30
-1-9;18-05-2023 23:47:29;;Jugador hizo click a Nico Robin. En la posicion 1, 3;18-05-2023 23:47:32
-1-9;18-05-2023 23:47:29;;Jugador hizo click a Chopper. En la posicion 2, 3;18-05-2023 23:47:33
-1-9;18-05-2023 23:47:29;;Jugador se equivoco;18-05-2023 23:47:34
-1-9;18-05-2023 23:47:29;;Jugador hizo click a Franky. En la posicion 1, 2;18-05-2023 23:47:35
-1-9;18-05-2023 23:47:29;;Jugador hizo click a Luffy. En la posicion 2, 2;18-05-2023 23:47:36
-1-9;18-05-2023 23:47:29;;Jugador se equivoco;18-05-2023 23:47:37
-1-9;18-05-2023 23:47:29;;Jugador hizo click a Zoro. En la posicion 0, 3;18-05-2023 23:47:38
-1-9;18-05-2023 23:47:29;;Jugador hizo click a Nami. En la posicion 0, 2;18-05-2023 23:47:39
-1-9;18-05-2023 23:47:29;;Jugador se equivoco;18-05-2023 23:47:40
-1-9;18-05-2023 23:47:29;18-05-2023 23:47:41;Cierre de sesion;18-05-2023 23:47:41
+00000001-9;19-05-2023 1:35:19;;Inicio de sesion;19-05-2023 1:35:19
+00000001-9;19-05-2023 1:35:19;;Jugador comenzo una partida;19-05-2023 1:35:20
+00000001-9;19-05-2023 1:35:19;;Jugador hizo click a Usopp. En la posicion 1, 3;19-05-2023 1:35:21
+00000001-9;19-05-2023 1:35:19;;Jugador hizo click a Nico Robin. En la posicion 1, 2;19-05-2023 1:35:22
+00000001-9;19-05-2023 1:35:19;;Jugador se equivoco;19-05-2023 1:35:23
+00000001-9;19-05-2023 1:35:19;;Jugador hizo click a Zoro. En la posicion 2, 2;19-05-2023 1:35:24
+00000001-9;19-05-2023 1:35:19;;Jugador hizo click a Nami. En la posicion 2, 1;19-05-2023 1:35:25
+00000001-9;19-05-2023 1:35:19;;Jugador se equivoco;19-05-2023 1:35:26
+00000001-9;19-05-2023 1:35:19;19-05-2023 1:35:27;Cierre de sesion;19-05-2023 1:35:27
+00000002-7;19-05-2023 1:35:50;;Inicio de sesion;19-05-2023 1:35:50
+00000002-7;19-05-2023 1:35:50;;Jugador comenzo una partida;19-05-2023 1:35:52
+00000002-7;19-05-2023 1:35:50;;Jugador hizo click a Franky. En la posicion 1, 3;19-05-2023 1:35:53
+00000002-7;19-05-2023 1:35:50;;Jugador hizo click a Zoro. En la posicion 2, 3;19-05-2023 1:35:53
+00000002-7;19-05-2023 1:35:50;;Jugador se equivoco;19-05-2023 1:35:55
+00000002-7;19-05-2023 1:35:50;19-05-2023 1:35:56;Cierre de sesion;19-05-2023 1:35:56
+27240598-0;19-05-2023 1:36:31;;Inicio de sesion;19-05-2023 1:36:31
+27240598-0;19-05-2023 1:36:31;;Jugador comenzo una partida;19-05-2023 1:36:33
+27240598-0;19-05-2023 1:36:31;;Jugador hizo click a Zoro. En la posicion 1, 2;19-05-2023 1:36:34
+27240598-0;19-05-2023 1:36:31;;Jugador hizo click a Nico Robin. En la posicion 1, 1;19-05-2023 1:36:34
+27240598-0;19-05-2023 1:36:31;;Jugador se equivoco;19-05-2023 1:36:36
+27240598-0;19-05-2023 1:36:31;19-05-2023 1:36:37;Cierre de sesion;19-05-2023 1:36:37
