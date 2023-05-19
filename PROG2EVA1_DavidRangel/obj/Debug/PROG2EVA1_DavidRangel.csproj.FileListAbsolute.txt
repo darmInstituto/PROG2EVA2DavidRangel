@@ -1,0 +1,85 @@
+C:\Users\itsda\OneDrive\Escritorio\Semestre 3 Programas\PROG2EVA1_DavidRangel\PROG2EVA1_DavidRangel\bin\Debug\PROG2EVA1_DavidRangel.exe.config
+C:\Users\itsda\OneDrive\Escritorio\Semestre 3 Programas\PROG2EVA1_DavidRangel\PROG2EVA1_DavidRangel\bin\Debug\PROG2EVA1_DavidRangel.exe
+C:\Users\itsda\OneDrive\Escritorio\Semestre 3 Programas\PROG2EVA1_DavidRangel\PROG2EVA1_DavidRangel\bin\Debug\PROG2EVA1_DavidRangel.pdb
+C:\Users\itsda\OneDrive\Escritorio\Semestre 3 Programas\PROG2EVA1_DavidRangel\PROG2EVA1_DavidRangel\obj\Debug\PROG2EVA1_DavidRangel.csproj.AssemblyReference.cache
+C:\Users\itsda\OneDrive\Escritorio\Semestre 3 Programas\PROG2EVA1_DavidRangel\PROG2EVA1_DavidRangel\obj\Debug\PROG2EVA1_DavidRangel.csproj.SuggestedBindingRedirects.cache
+C:\Users\itsda\OneDrive\Escritorio\Semestre 3 Programas\PROG2EVA1_DavidRangel\PROG2EVA1_DavidRangel\obj\Debug\PROG2EVA1_DavidRangel.Form1.resources
+C:\Users\itsda\OneDrive\Escritorio\Semestre 3 Programas\PROG2EVA1_DavidRangel\PROG2EVA1_DavidRangel\obj\Debug\PROG2EVA1_DavidRangel.Properties.Resources.resources
+C:\Users\itsda\OneDrive\Escritorio\Semestre 3 Programas\PROG2EVA1_DavidRangel\PROG2EVA1_DavidRangel\obj\Debug\PROG2EVA1_DavidRangel.csproj.GenerateResource.cache
+C:\Users\itsda\OneDrive\Escritorio\Semestre 3 Programas\PROG2EVA1_DavidRangel\PROG2EVA1_DavidRangel\obj\Debug\PROG2EVA1_DavidRangel.csproj.CoreCompileInputs.cache
+C:\Users\itsda\OneDrive\Escritorio\Semestre 3 Programas\PROG2EVA1_DavidRangel\PROG2EVA1_DavidRangel\obj\Debug\PROG2EVA1_DavidRangel.exe
+C:\Users\itsda\OneDrive\Escritorio\Semestre 3 Programas\PROG2EVA1_DavidRangel\PROG2EVA1_DavidRangel\obj\Debug\PROG2EVA1_DavidRangel.pdb
+C:\Users\itsda\OneDrive\Escritorio\Semestre 3 Programas\PROG2EVA1_DavidRangel\PROG2EVA1_DavidRangel\obj\Debug\PROG2EVA1_DavidRangel.JuegoMemoria.resources
+C:\Users\Laboratorio\Desktop\PROG2EVA1_DavidRangel\PROG2EVA1_DavidRangel\bin\Debug\PROG2EVA1_DavidRangel.exe.config
+C:\Users\Laboratorio\Desktop\PROG2EVA1_DavidRangel\PROG2EVA1_DavidRangel\bin\Debug\PROG2EVA1_DavidRangel.exe
+C:\Users\Laboratorio\Desktop\PROG2EVA1_DavidRangel\PROG2EVA1_DavidRangel\bin\Debug\PROG2EVA1_DavidRangel.pdb
+C:\Users\Laboratorio\Desktop\PROG2EVA1_DavidRangel\PROG2EVA1_DavidRangel\obj\Debug\PROG2EVA1_DavidRangel.csproj.AssemblyReference.cache
+C:\Users\Laboratorio\Desktop\PROG2EVA1_DavidRangel\PROG2EVA1_DavidRangel\obj\Debug\PROG2EVA1_DavidRangel.csproj.SuggestedBindingRedirects.cache
+C:\Users\Laboratorio\Desktop\PROG2EVA1_DavidRangel\PROG2EVA1_DavidRangel\obj\Debug\PROG2EVA1_DavidRangel.Form1.resources
+C:\Users\Laboratorio\Desktop\PROG2EVA1_DavidRangel\PROG2EVA1_DavidRangel\obj\Debug\PROG2EVA1_DavidRangel.JuegoMemoria.resources
+C:\Users\Laboratorio\Desktop\PROG2EVA1_DavidRangel\PROG2EVA1_DavidRangel\obj\Debug\PROG2EVA1_DavidRangel.Properties.Resources.resources
+C:\Users\Laboratorio\Desktop\PROG2EVA1_DavidRangel\PROG2EVA1_DavidRangel\obj\Debug\PROG2EVA1_DavidRangel.csproj.GenerateResource.cache
+C:\Users\Laboratorio\Desktop\PROG2EVA1_DavidRangel\PROG2EVA1_DavidRangel\obj\Debug\PROG2EVA1_DavidRangel.csproj.CoreCompileInputs.cache
+C:\Users\Laboratorio\Desktop\PROG2EVA1_DavidRangel\PROG2EVA1_DavidRangel\obj\Debug\PROG2EVA1_DavidRangel.exe
+C:\Users\Laboratorio\Desktop\PROG2EVA1_DavidRangel\PROG2EVA1_DavidRangel\obj\Debug\PROG2EVA1_DavidRangel.pdb
+C:\Users\JTBas\Downloads\PROG2EVA1_DavidRangel2-20230421T221959Z-001\PROG2EVA1_DavidRangel2\PROG2EVA1_DavidRangel\bin\Debug\PROG2EVA1_DavidRangel.exe.config
+C:\Users\JTBas\Downloads\PROG2EVA1_DavidRangel2-20230421T221959Z-001\PROG2EVA1_DavidRangel2\PROG2EVA1_DavidRangel\bin\Debug\PROG2EVA1_DavidRangel.exe
+C:\Users\JTBas\Downloads\PROG2EVA1_DavidRangel2-20230421T221959Z-001\PROG2EVA1_DavidRangel2\PROG2EVA1_DavidRangel\bin\Debug\PROG2EVA1_DavidRangel.pdb
+C:\Users\JTBas\Downloads\PROG2EVA1_DavidRangel2-20230421T221959Z-001\PROG2EVA1_DavidRangel2\PROG2EVA1_DavidRangel\obj\Debug\PROG2EVA1_DavidRangel.csproj.AssemblyReference.cache
+C:\Users\JTBas\Downloads\PROG2EVA1_DavidRangel2-20230421T221959Z-001\PROG2EVA1_DavidRangel2\PROG2EVA1_DavidRangel\obj\Debug\PROG2EVA1_DavidRangel.csproj.SuggestedBindingRedirects.cache
+C:\Users\JTBas\Downloads\PROG2EVA1_DavidRangel2-20230421T221959Z-001\PROG2EVA1_DavidRangel2\PROG2EVA1_DavidRangel\obj\Debug\PROG2EVA1_DavidRangel.Form1.resources
+C:\Users\JTBas\Downloads\PROG2EVA1_DavidRangel2-20230421T221959Z-001\PROG2EVA1_DavidRangel2\PROG2EVA1_DavidRangel\obj\Debug\PROG2EVA1_DavidRangel.JuegoMemoria.resources
+C:\Users\JTBas\Downloads\PROG2EVA1_DavidRangel2-20230421T221959Z-001\PROG2EVA1_DavidRangel2\PROG2EVA1_DavidRangel\obj\Debug\PROG2EVA1_DavidRangel.Properties.Resources.resources
+C:\Users\JTBas\Downloads\PROG2EVA1_DavidRangel2-20230421T221959Z-001\PROG2EVA1_DavidRangel2\PROG2EVA1_DavidRangel\obj\Debug\PROG2EVA1_DavidRangel.csproj.GenerateResource.cache
+C:\Users\JTBas\Downloads\PROG2EVA1_DavidRangel2-20230421T221959Z-001\PROG2EVA1_DavidRangel2\PROG2EVA1_DavidRangel\obj\Debug\PROG2EVA1_DavidRangel.csproj.CoreCompileInputs.cache
+C:\Users\JTBas\Downloads\PROG2EVA1_DavidRangel2-20230421T221959Z-001\PROG2EVA1_DavidRangel2\PROG2EVA1_DavidRangel\obj\Debug\PROG2EVA1_DavidRangel.exe
+C:\Users\JTBas\Downloads\PROG2EVA1_DavidRangel2-20230421T221959Z-001\PROG2EVA1_DavidRangel2\PROG2EVA1_DavidRangel\obj\Debug\PROG2EVA1_DavidRangel.pdb
+C:\Users\Alvaro\Downloads\PROG2EVA1_DavidRangel3\PROG2EVA1_DavidRangel\obj\Debug\PROG2EVA1_DavidRangel.csproj.AssemblyReference.cache
+C:\Users\Alvaro\Downloads\PROG2EVA1_DavidRangel3\PROG2EVA1_DavidRangel\obj\Debug\PROG2EVA1_DavidRangel.csproj.SuggestedBindingRedirects.cache
+C:\Users\Alvaro\Downloads\PROG2EVA1_DavidRangel3\PROG2EVA1_DavidRangel\obj\Debug\PROG2EVA1_DavidRangel.Form1.resources
+C:\Users\Alvaro\Downloads\PROG2EVA1_DavidRangel3\PROG2EVA1_DavidRangel\obj\Debug\PROG2EVA1_DavidRangel.JuegoMemoria.resources
+C:\Users\Alvaro\Downloads\PROG2EVA1_DavidRangel3\PROG2EVA1_DavidRangel\obj\Debug\PROG2EVA1_DavidRangel.Properties.Resources.resources
+C:\Users\Alvaro\Downloads\PROG2EVA1_DavidRangel3\PROG2EVA1_DavidRangel\obj\Debug\PROG2EVA1_DavidRangel.csproj.GenerateResource.cache
+C:\Users\Alvaro\Downloads\PROG2EVA1_DavidRangel3\PROG2EVA1_DavidRangel\obj\Debug\PROG2EVA1_DavidRangel.csproj.CoreCompileInputs.cache
+C:\Users\Alvaro\Downloads\PROG2EVA1_DavidRangel3\PROG2EVA1_DavidRangel\obj\Debug\PROG2EVA1_DavidRangel.exe
+C:\Users\Alvaro\Downloads\PROG2EVA1_DavidRangel3\PROG2EVA1_DavidRangel\obj\Debug\PROG2EVA1_DavidRangel.pdb
+C:\Users\Alvaro\Downloads\PROG2EVA1_DavidRangel3\PROG2EVA1_DavidRangel\bin\Debug\PROG2EVA1_DavidRangel.exe.config
+C:\Users\Alvaro\Downloads\PROG2EVA1_DavidRangel3\PROG2EVA1_DavidRangel\bin\Debug\PROG2EVA1_DavidRangel.exe
+C:\Users\Alvaro\Downloads\PROG2EVA1_DavidRangel3\PROG2EVA1_DavidRangel\bin\Debug\PROG2EVA1_DavidRangel.pdb
+C:\Users\itsda\OneDrive\Escritorio\PROG2EVA1_DavidRangel4-20230423T035247Z-001\PROG2EVA1_DavidRangel4\PROG2EVA1_DavidRangel\bin\Debug\PROG2EVA1_DavidRangel.exe.config
+C:\Users\itsda\OneDrive\Escritorio\PROG2EVA1_DavidRangel4-20230423T035247Z-001\PROG2EVA1_DavidRangel4\PROG2EVA1_DavidRangel\bin\Debug\PROG2EVA1_DavidRangel.exe
+C:\Users\itsda\OneDrive\Escritorio\PROG2EVA1_DavidRangel4-20230423T035247Z-001\PROG2EVA1_DavidRangel4\PROG2EVA1_DavidRangel\bin\Debug\PROG2EVA1_DavidRangel.pdb
+C:\Users\itsda\OneDrive\Escritorio\PROG2EVA1_DavidRangel4-20230423T035247Z-001\PROG2EVA1_DavidRangel4\PROG2EVA1_DavidRangel\obj\Debug\PROG2EVA1_DavidRangel.csproj.AssemblyReference.cache
+C:\Users\itsda\OneDrive\Escritorio\PROG2EVA1_DavidRangel4-20230423T035247Z-001\PROG2EVA1_DavidRangel4\PROG2EVA1_DavidRangel\obj\Debug\PROG2EVA1_DavidRangel.csproj.SuggestedBindingRedirects.cache
+C:\Users\itsda\OneDrive\Escritorio\PROG2EVA1_DavidRangel4-20230423T035247Z-001\PROG2EVA1_DavidRangel4\PROG2EVA1_DavidRangel\obj\Debug\PROG2EVA1_DavidRangel.Form1.resources
+C:\Users\itsda\OneDrive\Escritorio\PROG2EVA1_DavidRangel4-20230423T035247Z-001\PROG2EVA1_DavidRangel4\PROG2EVA1_DavidRangel\obj\Debug\PROG2EVA1_DavidRangel.JuegoMemoria.resources
+C:\Users\itsda\OneDrive\Escritorio\PROG2EVA1_DavidRangel4-20230423T035247Z-001\PROG2EVA1_DavidRangel4\PROG2EVA1_DavidRangel\obj\Debug\PROG2EVA1_DavidRangel.Properties.Resources.resources
+C:\Users\itsda\OneDrive\Escritorio\PROG2EVA1_DavidRangel4-20230423T035247Z-001\PROG2EVA1_DavidRangel4\PROG2EVA1_DavidRangel\obj\Debug\PROG2EVA1_DavidRangel.csproj.GenerateResource.cache
+C:\Users\itsda\OneDrive\Escritorio\PROG2EVA1_DavidRangel4-20230423T035247Z-001\PROG2EVA1_DavidRangel4\PROG2EVA1_DavidRangel\obj\Debug\PROG2EVA1_DavidRangel.csproj.CoreCompileInputs.cache
+C:\Users\itsda\OneDrive\Escritorio\PROG2EVA1_DavidRangel4-20230423T035247Z-001\PROG2EVA1_DavidRangel4\PROG2EVA1_DavidRangel\obj\Debug\PROG2EVA1_DavidRangel.exe
+C:\Users\itsda\OneDrive\Escritorio\PROG2EVA1_DavidRangel4-20230423T035247Z-001\PROG2EVA1_DavidRangel4\PROG2EVA1_DavidRangel\obj\Debug\PROG2EVA1_DavidRangel.pdb
+C:\Users\Laboratorio\Downloads\PROG2EVA1_DavidRangel\PROG2EVA1_DavidRangel\PROG2EVA1_DavidRangel\obj\Debug\PROG2EVA1_DavidRangel.csproj.AssemblyReference.cache
+C:\Users\Laboratorio\Downloads\PROG2EVA1_DavidRangel\PROG2EVA1_DavidRangel\PROG2EVA1_DavidRangel\obj\Debug\PROG2EVA1_DavidRangel.csproj.SuggestedBindingRedirects.cache
+C:\Users\Laboratorio\Downloads\PROG2EVA1_DavidRangel\PROG2EVA1_DavidRangel\PROG2EVA1_DavidRangel\obj\Debug\PROG2EVA1_DavidRangel.Form1.resources
+C:\Users\Laboratorio\Downloads\PROG2EVA1_DavidRangel\PROG2EVA1_DavidRangel\PROG2EVA1_DavidRangel\obj\Debug\PROG2EVA1_DavidRangel.JuegoMemoria.resources
+C:\Users\Laboratorio\Downloads\PROG2EVA1_DavidRangel\PROG2EVA1_DavidRangel\PROG2EVA1_DavidRangel\obj\Debug\PROG2EVA1_DavidRangel.Properties.Resources.resources
+C:\Users\Laboratorio\Downloads\PROG2EVA1_DavidRangel\PROG2EVA1_DavidRangel\PROG2EVA1_DavidRangel\obj\Debug\PROG2EVA1_DavidRangel.csproj.GenerateResource.cache
+C:\Users\Laboratorio\Downloads\PROG2EVA1_DavidRangel\PROG2EVA1_DavidRangel\PROG2EVA1_DavidRangel\obj\Debug\PROG2EVA1_DavidRangel.csproj.CoreCompileInputs.cache
+C:\Users\Laboratorio\Downloads\PROG2EVA1_DavidRangel\PROG2EVA1_DavidRangel\PROG2EVA1_DavidRangel\obj\Debug\PROG2EVA1_DavidRangel.exe
+C:\Users\Laboratorio\Downloads\PROG2EVA1_DavidRangel\PROG2EVA1_DavidRangel\PROG2EVA1_DavidRangel\obj\Debug\PROG2EVA1_DavidRangel.pdb
+C:\Users\Laboratorio\Downloads\PROG2EVA1_DavidRangel\PROG2EVA1_DavidRangel\PROG2EVA1_DavidRangel\bin\Debug\PROG2EVA1_DavidRangel.exe.config
+C:\Users\Laboratorio\Downloads\PROG2EVA1_DavidRangel\PROG2EVA1_DavidRangel\PROG2EVA1_DavidRangel\bin\Debug\PROG2EVA1_DavidRangel.exe
+C:\Users\Laboratorio\Downloads\PROG2EVA1_DavidRangel\PROG2EVA1_DavidRangel\PROG2EVA1_DavidRangel\bin\Debug\PROG2EVA1_DavidRangel.pdb
+C:\Users\itsda\Downloads\PROG2EVA1_DavidRangel\PROG2EVA1_DavidRangel\PROG2EVA1_DavidRangel\bin\Debug\PROG2EVA1_DavidRangel.exe.config
+C:\Users\itsda\Downloads\PROG2EVA1_DavidRangel\PROG2EVA1_DavidRangel\PROG2EVA1_DavidRangel\bin\Debug\PROG2EVA1_DavidRangel.exe
+C:\Users\itsda\Downloads\PROG2EVA1_DavidRangel\PROG2EVA1_DavidRangel\PROG2EVA1_DavidRangel\bin\Debug\PROG2EVA1_DavidRangel.pdb
+C:\Users\itsda\Downloads\PROG2EVA1_DavidRangel\PROG2EVA1_DavidRangel\PROG2EVA1_DavidRangel\obj\Debug\PROG2EVA1_DavidRangel.csproj.AssemblyReference.cache
+C:\Users\itsda\Downloads\PROG2EVA1_DavidRangel\PROG2EVA1_DavidRangel\PROG2EVA1_DavidRangel\obj\Debug\PROG2EVA1_DavidRangel.csproj.SuggestedBindingRedirects.cache
+C:\Users\itsda\Downloads\PROG2EVA1_DavidRangel\PROG2EVA1_DavidRangel\PROG2EVA1_DavidRangel\obj\Debug\PROG2EVA1_DavidRangel.Form1.resources
+C:\Users\itsda\Downloads\PROG2EVA1_DavidRangel\PROG2EVA1_DavidRangel\PROG2EVA1_DavidRangel\obj\Debug\PROG2EVA1_DavidRangel.JuegoMemoria.resources
+C:\Users\itsda\Downloads\PROG2EVA1_DavidRangel\PROG2EVA1_DavidRangel\PROG2EVA1_DavidRangel\obj\Debug\PROG2EVA1_DavidRangel.Properties.Resources.resources
+C:\Users\itsda\Downloads\PROG2EVA1_DavidRangel\PROG2EVA1_DavidRangel\PROG2EVA1_DavidRangel\obj\Debug\PROG2EVA1_DavidRangel.csproj.GenerateResource.cache
+C:\Users\itsda\Downloads\PROG2EVA1_DavidRangel\PROG2EVA1_DavidRangel\PROG2EVA1_DavidRangel\obj\Debug\PROG2EVA1_DavidRangel.csproj.CoreCompileInputs.cache
+C:\Users\itsda\Downloads\PROG2EVA1_DavidRangel\PROG2EVA1_DavidRangel\PROG2EVA1_DavidRangel\obj\Debug\PROG2EVA1_DavidRangel.exe
+C:\Users\itsda\Downloads\PROG2EVA1_DavidRangel\PROG2EVA1_DavidRangel\PROG2EVA1_DavidRangel\obj\Debug\PROG2EVA1_DavidRangel.pdb
+C:\Users\itsda\Downloads\PROG2EVA1_DavidRangel\PROG2EVA1_DavidRangel\PROG2EVA1_DavidRangel\obj\Debug\PROG2EVA1_DavidRangel.PantallaLog.resources
