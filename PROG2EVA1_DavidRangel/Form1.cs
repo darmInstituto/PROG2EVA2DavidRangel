@@ -73,5 +73,10 @@ namespace PROG2EVA1_DavidRangel
             pantallaLog.Show();          
             this.Hide();
         }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+
+        }
     }
 }
