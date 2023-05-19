@@ -35,7 +35,7 @@ namespace PROG2EVA1_DavidRangel
         private void Form1_Load(object sender, EventArgs e)
         {
             this.BackgroundImage = Image.FromFile(Application.StartupPath + @"\imagenes\fondorut.jpg");
-
+            //! 18-05: se determina si existe o no el archivo
             bool existe = File.Exists(ruta);
             
             if (existe)
@@ -43,6 +43,7 @@ namespace PROG2EVA1_DavidRangel
                 StreamReader sr = new StreamReader(ruta);
                 string lectura;
                 lectura = sr.ReadLine();
+                //! 18-05: si los encabezados están malos, se limipia el archivo
                 if (lectura != "rut;inicioSesion;finSesion;accion;accionF")
                 {
                     string headers = "rut;inicioSesion;finSesion;accion;accionF\n";
@@ -57,6 +58,7 @@ namespace PROG2EVA1_DavidRangel
             }
             else
             {
+                //! 18-05: si no existe, se crea
                 string headers = "rut;inicioSesion;finSesion;accion;accionF\n";
                 File.WriteAllText(ruta, headers);
             }
@@ -64,7 +66,7 @@ namespace PROG2EVA1_DavidRangel
 
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
         {
-                    
+            Application.Exit();       
         }
 
         private void button2_Click_1(object sender, EventArgs e)

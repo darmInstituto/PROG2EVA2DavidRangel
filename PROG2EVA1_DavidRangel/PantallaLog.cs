@@ -21,7 +21,16 @@ namespace PROG2EVA1_DavidRangel
         string ruta = Application.StartupPath + @"\archivo\VIGIADAVIDRANGEL.txt";
         private void button2_Click(object sender, EventArgs e)
         {
-
+            /*! 18-05:
+             * Se limpia el dataGridView
+             * Se le colocan 5 columnas
+             * Se realiza la lectura de la primera linea
+             * esa linea se divide en ';' por lo que se utiliza split para convertir la linea en un arreglo tomando el ';' como separacion de cada celda
+             * mientras la linea sea diferente de null sigue leyendo
+             * si el uno de los registros tiene escrito "rut", quiere decir que es el encabezado de la tabla
+             * El dataGridView1.Rows.Add() recibe por parametro un arreglo
+             * por lo tanto el arreglo obtenido del split se agrega como una fila del dataGridView
+             */
             dataGridView1.Rows.Clear();
             StreamReader sr = new StreamReader(ruta);
             String lectura;
@@ -50,13 +59,14 @@ namespace PROG2EVA1_DavidRangel
 
         private void button3_Click(object sender, EventArgs e)
         {
+            //! 18-05: si rut no es correcto no avanza
             if (ValidacionRut.validarRut(textBox2.Text) == true)
             {
                 dataGridView1.Rows.Clear();
                 StreamReader sr = new StreamReader(ruta);
                 String lectura;
                 lectura = sr.ReadLine();
-                
+                //! misma logica que se explicó más arriba
                 while (lectura != null)
                 {
                     string[] registro = lectura.Split(';');
@@ -71,6 +81,7 @@ namespace PROG2EVA1_DavidRangel
                     }
                     else
                     {
+                        //! 18-05: si la primera celda (rut) del registro corresponde al mismo rut que se escribió, se muestra
                         if (registro[0] == textBox2.Text)
                         {
                             dataGridView1.Rows.Add(registro);
