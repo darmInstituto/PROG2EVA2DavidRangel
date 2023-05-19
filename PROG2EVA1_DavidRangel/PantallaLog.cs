@@ -21,6 +21,7 @@ namespace PROG2EVA1_DavidRangel
         string ruta = Application.StartupPath + @"\archivo\VIGIADAVIDRANGEL.txt";
         private void button2_Click(object sender, EventArgs e)
         {
+
             dataGridView1.Rows.Clear();
             StreamReader sr = new StreamReader(ruta);
             String lectura;
