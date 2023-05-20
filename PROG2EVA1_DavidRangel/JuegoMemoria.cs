@@ -45,7 +45,7 @@ namespace PROG2EVA1_DavidRangel
         {
             InitializeComponent();
             //! 18-05: se asgina el parametro recibido del constructor en la variable global
-            this.rut = rut;
+            this.rut = rut;           
         }
 
         /*! 18-05: 
@@ -104,9 +104,19 @@ namespace PROG2EVA1_DavidRangel
             this.Close();
         }
 
+        Thread thread;
         //! 18-05: Cuando Close es llamado, se envia el cierre de sesion y carga la informacion, se devuelve al form1
         private void JuegoMemoria_FormClosed(object sender, FormClosedEventArgs e)
         {
+
+            if (thread != null)
+            {
+                if (thread.IsAlive)
+                {
+                    thread.Abort();
+                }
+            }
+
             enviarEvento("Cierre de sesion", true);
             cargarInformacion();
             Form1 form1 = new Form1();
@@ -233,6 +243,7 @@ namespace PROG2EVA1_DavidRangel
 
         private void picClick(object sender, EventArgs e)
         {
+
             PictureBox picClickeado = (PictureBox)sender;
             int filaClick = 0;
             int colClick = 0;
@@ -270,16 +281,18 @@ namespace PROG2EVA1_DavidRangel
                 //! 18-05: La carta jugada será el personaje ubicado en la posicion que indique el número-1 seleccionado
                 string cartaJugada = personajes[numero-1];
                 enviarEvento("Jugador hizo click a " + cartaJugada + ". En la posicion " + filaClick + ", " + colClick, false);
-                
+
                 string image = Application.StartupPath + @"\imagenes\" + numero + ".jpg"; // busca imagen con nombre de numero.
                 OnePiece[filaClick, colClick].Image = Image.FromFile(image); //inserta la imagen
 
+
                 OnePiece[filaClick, colClick].Tag = true; // cambia el control a True por ende queda visible y con la imagen que corresponde.
                 seleccionados.Add(numero);// se agrega a la lista seleccionados.
-
+                
                 //! 18-05: si la cantidad de seleccionados llega a 2
                 if (seleccionados.Count == 2)
                 {
+                    
                     if (seleccionados[0] == seleccionados[1]) //compara en lista seleccionados la primera posicion con la segunda
                     {
                         //! 18-05: si coinciden, se cuenta 
@@ -294,35 +307,46 @@ namespace PROG2EVA1_DavidRangel
                     }
                     else
                     {
-                        MessageBox.Show("INCORRECTO");
-
                         enviarEvento("Jugador se equivoco", false);
-             
-                        for (int fila = 0; fila < OnePiece.GetLength(0); fila++)
-                        {
-                            for (int columna = 0; columna < OnePiece.GetLength(1); columna++)
-                            {
-                                if (seleccionados[1] == matriz[fila, columna] || seleccionados[0] == matriz[fila, columna])
-                                {
-                                    // en este for se busca identificar el segun click erroneo del jugador, a través de la comparación.
-                                    OnePiece[fila, columna].Tag = false; //cambia el control a false
-                                    OnePiece[fila, columna].Image = Image.FromFile(Application.StartupPath + @"\imagenes\default.jpg"); //inserta la imagen "default"
-                                }
-                            }
-                        }
 
+                        int num1 = seleccionados[0];
+                        int num2 = seleccionados[1];
 
+                        /*! 19-05:
+                         * Thread es una clase que crea y controla un hilo.
+                         * su constructor recibe una funcion (no su llamada) que va a ejecutar cuando se inicie (Start)
+                         * en este caso, se colocó una función flecha que va a llamar a la función colocarImagenesDefault
+                         */
+                        thread = new Thread(() => colocarImagenesDefault(num1, num2));
+                        thread.Start();
+
+                        
                     }
                     seleccionados.Clear(); //limpiamos lista seleccionados.
                 }
             }
-        }
+        }  
+        
+        
 
-        //! 18-05: Evento que sucede cuando se muestra el formulario
-        private void JuegoMemoria_Shown(object sender, EventArgs e)
+        //! 19-05: Metodo para voltear las imagenes a su imagen default. Se utiliza el thread.sleep para detener la ejecucion del
+        //! proceso (durante 200 milisegundos), de esta manera se le da ese tiempo al usuario para ver la segunda carta que le dio click
+        void colocarImagenesDefault(int num1, int num2)
         {
+            Thread.Sleep(200);
 
-            
+            for (int fila = 0; fila < OnePiece.GetLength(0); fila++)
+            {
+                for (int columna = 0; columna < OnePiece.GetLength(1); columna++)
+                {
+                    if (num1 == matriz[fila, columna] || num2 == matriz[fila, columna])
+                    {
+                        // en este for se busca identificar el segun click erroneo del jugador, a través de la comparación.
+                        OnePiece[fila, columna].Tag = false; //cambia el control a false
+                        OnePiece[fila, columna].Image = Image.FromFile(Application.StartupPath + @"\imagenes\default.jpg"); //inserta la imagen "default"
+                    }
+                }
+            }
         }
     }
 }
