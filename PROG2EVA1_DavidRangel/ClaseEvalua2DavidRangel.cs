@@ -14,6 +14,12 @@ namespace PROG2EVA1_DavidRangel
         private string accion;
         private DateTime accionF;
 
+
+        public ClaseEvalua2DavidRangel()
+        {
+
+        }
+
         public ClaseEvalua2DavidRangel(string rut, DateTime inicioSesion, DateTime finSesion, string accion, DateTime accionF)
         {
             this.rut = rut;

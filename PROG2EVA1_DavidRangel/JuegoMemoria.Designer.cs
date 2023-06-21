@@ -282,7 +282,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(899, 645);
+            this.ClientSize = new System.Drawing.Size(900, 645);
             this.Controls.Add(this.pictureBox16);
             this.Controls.Add(this.pictureBox15);
             this.Controls.Add(this.pictureBox14);
@@ -309,7 +309,6 @@
             this.Text = "JuegoMemoria";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.JuegoMemoria_FormClosed);
             this.Load += new System.EventHandler(this.JuegoMemoria_Load);
-            this.Shown += new System.EventHandler(this.JuegoMemoria_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).EndInit();
