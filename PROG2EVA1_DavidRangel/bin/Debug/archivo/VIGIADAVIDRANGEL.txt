@@ -1,54 +1,21 @@
-rut;inicioSesion;finSesion;accion;accionF
-29517451-K;21-05-2023 23:14:48;;Inicio de sesion;21-05-2023 23:14:48
-29517451-K;21-05-2023 23:14:48;;Jugador comenzo una partida;21-05-2023 23:14:50
-29517451-K;21-05-2023 23:14:48;;Jugador hizo click a Sanji. En la posicion 1, 3;21-05-2023 23:14:51
-29517451-K;21-05-2023 23:14:48;;Jugador hizo click a Nami. En la posicion 0, 3;21-05-2023 23:14:52
-29517451-K;21-05-2023 23:14:48;;Jugador se equivoco;21-05-2023 23:14:52
-29517451-K;21-05-2023 23:14:48;;Jugador hizo click a Sanji. En la posicion 0, 2;21-05-2023 23:14:53
-29517451-K;21-05-2023 23:14:48;;Jugador hizo click a Sanji. En la posicion 1, 3;21-05-2023 23:14:54
-29517451-K;21-05-2023 23:14:48;;Jugador encontro una pareja;21-05-2023 23:14:54
-29517451-K;21-05-2023 23:14:48;21-05-2023 23:14:56;Cierre de sesion;21-05-2023 23:14:56
-27240598-0;21-05-2023 23:29:39;;Inicio de sesion;21-05-2023 23:29:39
-27240598-0;21-05-2023 23:29:39;;Jugador comenzo una partida;21-05-2023 23:29:41
-27240598-0;21-05-2023 23:29:39;;Jugador hizo click a Franky. En la posicion 1, 3;21-05-2023 23:29:41
-27240598-0;21-05-2023 23:29:39;;Jugador hizo click a Luffy. En la posicion 2, 2;21-05-2023 23:29:42
-27240598-0;21-05-2023 23:29:39;;Jugador se equivoco;21-05-2023 23:29:42
-27240598-0;21-05-2023 23:29:39;;Jugador hizo click a Usopp. En la posicion 2, 3;21-05-2023 23:29:43
-27240598-0;21-05-2023 23:29:39;;Jugador hizo click a Sanji. En la posicion 3, 2;21-05-2023 23:29:44
-27240598-0;21-05-2023 23:29:39;;Jugador se equivoco;21-05-2023 23:29:44
-27240598-0;21-05-2023 23:29:39;;Jugador hizo click a Zoro. En la posicion 3, 1;21-05-2023 23:29:45
-27240598-0;21-05-2023 23:29:39;;Jugador hizo click a Franky. En la posicion 2, 1;21-05-2023 23:29:46
-27240598-0;21-05-2023 23:29:39;;Jugador se equivoco;21-05-2023 23:29:46
-27240598-0;21-05-2023 23:29:39;;Jugador hizo click a Franky. En la posicion 2, 1;21-05-2023 23:29:47
-27240598-0;21-05-2023 23:29:39;;Jugador hizo click a Usopp. En la posicion 2, 3;21-05-2023 23:29:49
-27240598-0;21-05-2023 23:29:39;;Jugador se equivoco;21-05-2023 23:29:49
-27240598-0;21-05-2023 23:29:39;;Jugador hizo click a Chopper. En la posicion 1, 2;21-05-2023 23:29:50
-27240598-0;21-05-2023 23:29:39;;Jugador hizo click a Nami. En la posicion 1, 1;21-05-2023 23:29:51
-27240598-0;21-05-2023 23:29:39;;Jugador se equivoco;21-05-2023 23:29:51
-27240598-0;21-05-2023 23:29:39;;Jugador hizo click a Nico Robin. En la posicion 2, 0;21-05-2023 23:29:53
-27240598-0;21-05-2023 23:29:39;;Jugador hizo click a Nico Robin. En la posicion 1, 0;21-05-2023 23:29:54
-27240598-0;21-05-2023 23:29:39;;Jugador encontro una pareja;21-05-2023 23:29:54
-27240598-0;21-05-2023 23:29:39;21-05-2023 23:29:56;Cierre de sesion;21-05-2023 23:29:56
-00000001-9;21-05-2023 23:30:20;;Inicio de sesion;21-05-2023 23:30:20
-00000001-9;21-05-2023 23:30:20;;Jugador comenzo una partida;21-05-2023 23:30:22
-00000001-9;21-05-2023 23:30:20;;Jugador hizo click a Zoro. En la posicion 1, 3;21-05-2023 23:30:23
-00000001-9;21-05-2023 23:30:20;;Jugador hizo click a Luffy. En la posicion 2, 3;21-05-2023 23:30:23
-00000001-9;21-05-2023 23:30:20;;Jugador se equivoco;21-05-2023 23:30:23
-00000001-9;21-05-2023 23:30:20;;Jugador reinicio la partida;21-05-2023 23:30:24
-00000001-9;21-05-2023 23:30:20;21-05-2023 23:30:25;Cierre de sesion;21-05-2023 23:30:25
-00000001-9;24-05-2023 0:03:04;;Inicio de sesion;24-05-2023 0:03:04
-00000001-9;24-05-2023 0:03:04;;Jugador comenzo una partida;24-05-2023 0:03:08
-00000001-9;24-05-2023 0:03:04;;Jugador hizo click a Nami. En la posicion 1, 3;24-05-2023 0:03:10
-00000001-9;24-05-2023 0:03:04;;Jugador hizo click a Zoro. En la posicion 0, 3;24-05-2023 0:03:11
-00000001-9;24-05-2023 0:03:04;;Jugador se equivoco;24-05-2023 0:03:11
-00000001-9;24-05-2023 0:03:04;24-05-2023 0:03:17;Cierre de sesion;24-05-2023 0:03:17
-00000001-9;24-05-2023 0:04:29;;Inicio de sesion;24-05-2023 0:04:29
-00000001-9;24-05-2023 0:04:29;;Jugador comenzo una partida;24-05-2023 0:04:31
-00000001-9;24-05-2023 0:04:29;;Jugador hizo click a Luffy. En la posicion 1, 3;24-05-2023 0:04:32
-00000001-9;24-05-2023 0:04:29;;Jugador hizo click a Franky. En la posicion 0, 3;24-05-2023 0:04:32
-00000001-9;24-05-2023 0:04:29;;Jugador se equivoco;24-05-2023 0:04:32
-00000001-9;24-05-2023 0:04:29;;Jugador hizo click a Chopper. En la posicion 1, 2;24-05-2023 0:04:34
-00000001-9;24-05-2023 0:04:29;;Jugador hizo click a Luffy. En la posicion 1, 3;24-05-2023 0:04:34
-00000001-9;24-05-2023 0:04:29;;Jugador se equivoco;24-05-2023 0:04:34
-00000001-9;24-05-2023 0:04:29;;Jugador reinicio la partida;24-05-2023 0:04:35
-00000001-9;24-05-2023 0:04:29;24-05-2023 0:05:19;Cierre de sesion;24-05-2023 0:05:19
+clave;inicioSesion;finSesion;accion;accionF
+JPR00000001-9;22-06-2023 02:45:05.987;;Inicio de sesion;22-06-2023 02:45:05.991
+JPR00000001-9;22-06-2023 02:45:05.987;;Jugador comenzo una partida;22-06-2023 02:45:07.132
+JPR00000001-9;22-06-2023 02:45:05.987;;Jugador hizo click a Sanji. En la posicion 2, 3;22-06-2023 02:45:08.403
+JPR00000001-9;22-06-2023 02:45:05.987;;Jugador hizo click a Luffy. En la posicion 1, 3;22-06-2023 02:45:08.672
+JPR00000001-9;22-06-2023 02:45:05.987;;Jugador se equivoco;22-06-2023 02:45:08.681
+JPR00000001-9;22-06-2023 02:45:05.987;;Jugador hizo click a Nico Robin. En la posicion 1, 2;22-06-2023 02:45:09.260
+JPR00000001-9;22-06-2023 02:45:05.987;;Jugador hizo click a Zoro. En la posicion 2, 2;22-06-2023 02:45:09.501
+JPR00000001-9;22-06-2023 02:45:05.987;;Jugador se equivoco;22-06-2023 02:45:09.510
+JPR00000001-9;22-06-2023 02:45:05.987;;Jugador hizo click a Nami. En la posicion 1, 1;22-06-2023 02:45:10.148
+JPR00000001-9;22-06-2023 02:45:05.987;;Jugador hizo click a Nico Robin. En la posicion 2, 1;22-06-2023 02:45:10.466
+JPR00000001-9;22-06-2023 02:45:05.987;;Jugador se equivoco;22-06-2023 02:45:10.468
+JPR00000001-9;22-06-2023 02:45:05.987;;Jugador reinicio la partida;22-06-2023 02:45:11.159
+JPR00000001-9;22-06-2023 02:45:05.987;;Jugador reinicio la partida;22-06-2023 02:45:11.456
+JPR00000001-9;22-06-2023 02:45:05.987;;Jugador reinicio la partida;22-06-2023 02:45:11.642
+JPR00000001-9;22-06-2023 02:45:05.987;;Jugador reinicio la partida;22-06-2023 02:45:11.829
+JPR00000001-9;22-06-2023 02:45:05.987;;Jugador reinicio la partida;22-06-2023 02:45:12.110
+JPR00000001-9;22-06-2023 02:45:05.987;;Jugador reinicio la partida;22-06-2023 02:45:12.249
+JPR00000001-9;22-06-2023 02:45:05.987;22-06-2023 02:45:12.846;Cierre de sesion;22-06-2023 02:45:12.846
+JPR00000001-9;22-06-2023 02:50:12.017;;Inicio de sesion;22-06-2023 02:50:12.018
+JPR00000001-9;22-06-2023 02:50:12.017;22-06-2023 02:50:12.905;Cierre de sesion;22-06-2023 02:50:12.905

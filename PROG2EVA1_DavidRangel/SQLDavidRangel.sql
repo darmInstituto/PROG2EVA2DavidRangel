@@ -31,10 +31,16 @@ insert into PERFILESDavidRangel (rut, nombre, ApPat, ApMat, Clave, Nivel)
 values ('22222222-2', 'Juan','Perez','Cotapos','.', 2);
 
 -- Mostrar de la tabla PERFILESnombreapellido los registros con apellido apellido y nivel 1
-select * from PERFILESDavidRangel where ApPat = 'Rangel' and nivel = 1;
+select * from PERFILESDavidRangel;
 
 --Modificar los registros asignando contenido a campo CLAVE correspondiente a cada uno.
 update PERFILESDavidRangel set Clave = CONCAT(SUBSTRING(nombre,1,1), SUBSTRING(ApPat,1,1), SUBSTRING(ApMat,1,1), Rut);
 
 --Eliminar registros con nombre Juan.
 delete from PERFILESDavidRangel where nombre = 'Juan';
+
+/*
+insert into ACCIONESDavidRangel (clave, InicioSesion, FinSesion, Accion, AccionF) values
+('MPJ29517451-K', '01-01-01', '01-01-01', 'a', '01-01-01');
+*/
+select p.Rut, p.Nombre, p.ApPat, p.ApMat from PERFILESDavidRangel p left join ACCIONESDavidRangel a on a.Clave = p.Clave;

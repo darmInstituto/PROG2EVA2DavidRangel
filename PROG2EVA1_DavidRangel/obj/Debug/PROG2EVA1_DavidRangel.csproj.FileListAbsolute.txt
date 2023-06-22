@@ -109,3 +109,6 @@ C:\Users\itsda\Source\Repos\PROG2EVA2DavidRangel\PROG2EVA1_DavidRangel\obj\Debug
 C:\Users\itsda\Source\Repos\PROG2EVA2DavidRangel\PROG2EVA1_DavidRangel\obj\Debug\PROG2EVA1_DavidRangel.csproj.CoreCompileInputs.cache
 C:\Users\itsda\Source\Repos\PROG2EVA2DavidRangel\PROG2EVA1_DavidRangel\obj\Debug\PROG2EVA1_DavidRangel.exe
 C:\Users\itsda\Source\Repos\PROG2EVA2DavidRangel\PROG2EVA1_DavidRangel\obj\Debug\PROG2EVA1_DavidRangel.pdb
+C:\Users\itsda\source\repos\PROG2EVA2DavidRangel\PROG2EVA1_DavidRangel\bin\Debug\BDDPROG2DavidRangel.mdf
+C:\Users\itsda\source\repos\PROG2EVA2DavidRangel\PROG2EVA1_DavidRangel\bin\Debug\BDDPROG2DavidRangel_log.ldf
+C:\Users\itsda\source\repos\PROG2EVA2DavidRangel\PROG2EVA1_DavidRangel\obj\Debug\PROG2EVA1_DavidRangel.Perfiles.resources

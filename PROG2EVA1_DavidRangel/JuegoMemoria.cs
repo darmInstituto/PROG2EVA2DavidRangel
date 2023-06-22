@@ -82,7 +82,7 @@ namespace PROG2EVA1_DavidRangel
                 }
                 else
                 {
-                    fechaFin = usuario.getFin().ToString();
+                    fechaFin = Op.parseDateTime(usuario.getFin(), 2);
                 }
                 /*! 18-05: 
                  * Format es una funcion que permite colocar los valores de varias variables dentro de un texto
@@ -91,7 +91,7 @@ namespace PROG2EVA1_DavidRangel
                  * {1} -> usuario.getInicio() 
                  * {2} -> fechaFin y así sucesivamente
                  */
-                string registro = String.Format("{0};{1};{2};{3};{4}", usuario.getRut(), usuario.getInicio(), fechaFin, usuario.getAccion(), usuario.getAccionF());
+                string registro = String.Format("{0};{1};{2};{3};{4}", usuario.getRut(), Op.parseDateTime(usuario.getInicio(), 2), fechaFin, usuario.getAccion(), Op.parseDateTime(usuario.getAccionF(), 2));
                 //! 18-05: Se escribe el registro en el txt
                 sw.WriteLine(registro);
             }
@@ -118,9 +118,7 @@ namespace PROG2EVA1_DavidRangel
             }
 
             enviarEvento("Cierre de sesion", true);
-            cargarInformacion();
-            Form1 form1 = new Form1();
-            form1.Show();
+            cargarInformacion();           
         }
 
         private void JuegoMemoria_Load(object sender, EventArgs e)

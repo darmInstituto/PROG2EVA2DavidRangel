@@ -20,14 +20,14 @@ namespace PROG2EVA1_DavidRangel
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string rut = textBox1.Text;
-
-            if (ValidacionRut.validarRut(rut) == true)
+            string rut = Op.ponerMinusculas(textBox1.Text);
+            
+            if (Op.validarRut(rut) == true)
             {
                 JuegoMemoria form2 = new JuegoMemoria(rut.PadLeft(10, '0'));
-                form2.Show();
-                this.Hide();
-            }         
+                form2.ShowDialog();
+            }
+            textBox1.Clear();
         }
 
         string ruta = Application.StartupPath + @"\archivo\VIGIADAVIDRANGEL.txt";
@@ -44,9 +44,9 @@ namespace PROG2EVA1_DavidRangel
                 string lectura;
                 lectura = sr.ReadLine();
                 //! 18-05: si los encabezados están malos, se limipia el archivo
-                if (lectura != "rut;inicioSesion;finSesion;accion;accionF")
+                if (lectura != "clave;inicioSesion;finSesion;accion;accionF")
                 {
-                    string headers = "rut;inicioSesion;finSesion;accion;accionF\n";
+                    string headers = "clave;inicioSesion;finSesion;accion;accionF\n";
                     sr.Close();
                     File.WriteAllText(ruta, headers);
                 }
@@ -59,7 +59,7 @@ namespace PROG2EVA1_DavidRangel
             else
             {
                 //! 18-05: si no existe, se crea
-                string headers = "rut;inicioSesion;finSesion;accion;accionF\n";
+                string headers = "clave;inicioSesion;finSesion;accion;accionF\n";
                 File.WriteAllText(ruta, headers);
             }
         }
@@ -72,13 +72,18 @@ namespace PROG2EVA1_DavidRangel
         private void button2_Click_1(object sender, EventArgs e)
         {
             PantallaLog pantallaLog = new PantallaLog();
-            pantallaLog.Show();          
-            this.Hide();
+            pantallaLog.ShowDialog();                    
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
 
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Perfiles perfiles = new Perfiles();
+            perfiles.ShowDialog();
         }
     }
 }
