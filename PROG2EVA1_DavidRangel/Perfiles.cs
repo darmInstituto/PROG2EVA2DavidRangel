@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,36 +17,58 @@ namespace PROG2EVA1_DavidRangel
         public Perfiles()
         {
             InitializeComponent();
+            rut = "";
+            nivel = 1;
         }
-        string ruta;
-        int nivel = 1;
+        public Perfiles(string rut, int nivel)
+        {
+            this.rut = rut;
+            this.nivel = nivel;
+            InitializeComponent();
+        }
+
+        string rut;
+        string rutaBDD = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"C:\\basesLeones\\BDDPROG2DavidRangel.mdf\";Integrated Security=True";
+        int nivel;
         TextBox[] arrTextBoxs;
         private void Perfiles_Load(object sender, EventArgs e)
         {
             arrTextBoxs = new TextBox[5] { txtRut, txtNombre, txtPaterno, txtMaterno, txtNivel };
-            string rutaAplicacion = Application.StartupPath;
-            int diferencia = rutaAplicacion.Length - 9;
-            string rutaBDD = rutaAplicacion.Remove(diferencia, 9);
-            ruta = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"" + rutaBDD + "BDDPROG2DavidRangel.mdf\";Integrated Security=True";
+                            
             if (nivel == 1)
             {
+                label5.Visible = false;
+                txtClaveEliminar.Visible = false;
+                btnEliminar.Visible = false;
+                button1.Visible = false;
                 btnModificar.Visible = false;
                 label6.Visible = false;
                 txtNivel.Visible = false;
                 dataGridView1.Visible = false;
-                this.Size = new System.Drawing.Size(334, 296);
+                this.Size = new System.Drawing.Size(390, 296);
                 btnIngresar.Location = new System.Drawing.Point(165, 180);
             }
             else
             {
-                this.Size = new System.Drawing.Size(717, 336);
+                label5.Visible = true;
+                txtClaveEliminar.Visible = true;
+
+                mostrarTodoToolStripMenuItem.Visible = true;
+                btnEliminar.Visible = true;
+                button1.Visible = true;
+                btnModificar.Visible = true;
+                label6.Visible = true;
+                txtNivel.Visible = true;
+                dataGridView1.Visible = true;
+                this.Size = new System.Drawing.Size(776, 398);
+                            
             }
             actualizarTabla();
         }
 
         void actualizarTabla()
         {
-            SqlConnection con = new SqlConnection(ruta);
+            SqlConnection con = new SqlConnection(rutaBDD);
 
             con.Open();
             DataTable datos = new DataTable();
@@ -58,8 +81,8 @@ namespace PROG2EVA1_DavidRangel
 
             dataGridView1.Columns[0].HeaderText = "Rut";
             dataGridView1.Columns[1].HeaderText = "Nombre";
-            dataGridView1.Columns[2].HeaderText = "Apellido Paterno";
-            dataGridView1.Columns[3].HeaderText = "Apellido Materno";
+            dataGridView1.Columns[2].HeaderText = "Apellido Pat";
+            dataGridView1.Columns[3].HeaderText = "Apellido Mat";
             dataGridView1.Columns[4].HeaderText = "Clave";
             dataGridView1.Columns[5].HeaderText = "Nivel";
 
@@ -88,7 +111,7 @@ namespace PROG2EVA1_DavidRangel
             {
                 txtNivel.Text = "1";
             }
-            SqlConnection con = new SqlConnection(ruta);
+            SqlConnection con = new SqlConnection(rutaBDD);
             con.Open();
             DataTable datos = new DataTable();
             string setencia = String.Format("select * from PERFILESDavidRangel");
@@ -115,7 +138,7 @@ namespace PROG2EVA1_DavidRangel
                 string materno = txtMaterno.Text;
                 
                 string clave = nombre[0].ToString() + paterno[0].ToString() + materno[0].ToString() + rut;
-                int nivelIngresar = nivel == 2 ? int.Parse(txtNivel.Text) : 1;
+                int nivelIngresar = nivel != 1 ? int.Parse(txtNivel.Text) : 1;
 
                 bool usuarioExiste = false;
 
@@ -126,7 +149,7 @@ namespace PROG2EVA1_DavidRangel
                         if (fila[0].ToString() == rut)
                         {
                             usuarioExiste = true;
-                            MessageBox.Show("Usuario ya ingresado");
+                            MessageBox.Show("Usuario ya existe en la BDD");
                         }
                     }
 
@@ -144,94 +167,47 @@ namespace PROG2EVA1_DavidRangel
                 }
                 arrTextBoxs.ToList().ForEach((x) => x.Clear());
             }
-
-
-        }
-
-        private void validarToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            string rut = Op.ponerMinusculas(toolStripTextBox1.Text.PadLeft(10, '0'));
-            toolStripTextBox1.Text = rut;
-            if (rut != String.Empty)
+            else
             {
-                SqlConnection con = new SqlConnection(ruta);
-
-                con.Open();
-                DataTable datos = new DataTable();
-                string setencia = String.Format("select rut, nivel from PERFILESDavidRangel");
-                SqlDataAdapter dataAdapter = new SqlDataAdapter(setencia, con);
-                dataAdapter.Fill(datos);
-                con.Close();
-
-                foreach (DataRow fila in datos.Rows)
-                {
-                    if (fila[0].ToString() == rut)
-                    {
-                        nivel = int.Parse(fila[1].ToString());
-                    }
-                }
-
-                if (nivel == 2)
-                {
-                    btnModificar.Visible = true;
-                    label6.Visible = true;
-                    txtNivel.Visible = true;
-                    dataGridView1.Visible = true;
-                    this.Size = new System.Drawing.Size(717, 336);
-                    btnIngresar.Location = new System.Drawing.Point(78, 204);
-                    MessageBox.Show("Permisos de Admin");
-                    toolStripTextBox1.Enabled = false;
-                    validarToolStripMenuItem.Enabled = false;
-                    volverToolStripMenuItem.Visible = true;
-                }
-                else
-                {
-                    MessageBox.Show("Error");
-                    toolStripTextBox1.Clear();
-                }
+                MessageBox.Show("Campos vacíos!");
             }
         }
-
-        private void volverToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (nivel == 2)
-            {
-                btnModificar.Visible = false;
-                label6.Visible = false;
-                txtNivel.Visible = false;
-                dataGridView1.Visible = false;
-                this.Size = new System.Drawing.Size(334, 296);
-                btnIngresar.Location = new System.Drawing.Point(165, 180);
-                nivel = 1;
-                toolStripTextBox1.Enabled = true;
-                validarToolStripMenuItem.Enabled = true;
-                volverToolStripMenuItem.Visible = false;
-                toolStripTextBox1.Clear();
-            }
-        }
-
+            
         private void eliminarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("¿Seguro desea eliminar este registro?", "Advertencia", MessageBoxButtons.YesNo) == DialogResult.Yes)
-            {
-                string rut = (dataGridView1.SelectedRows[0].Cells[0].Value.ToString());
+            eliminarRegistro(dataGridView1.SelectedRows[0].Cells[4].Value.ToString());
+        }
 
-                if (rut == toolStripTextBox1.Text)
+        void eliminarRegistro(string clave)
+        {
+            if (MessageBox.Show("¿Seguro desea eliminar este perfil? Se van a eliminar el registro de sus acciones", "Advertencia", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {             
+                if (clave.Substring(3) == this.rut)
                 {
                     MessageBox.Show("No te puedes borrar a ti mismo");
                 }
                 else
                 {
-                    SqlConnection con = new SqlConnection(ruta);
+                    SqlConnection con = new SqlConnection(rutaBDD);
+
                     con.Open();
                     DataTable datos = new DataTable();
-                    string setencia = String.Format("delete from PERFILESDavidRangel where rut = '{0}'", rut);
+                    string setencia = String.Format("delete from ACCIONESDavidRangel where clave = '{0}'", clave);
                     SqlDataAdapter dataAdapter = new SqlDataAdapter(setencia, con);
                     dataAdapter.Fill(datos);
                     con.Close();
+                   
+                    con.Open();
+                    datos = new DataTable();
+                    setencia = String.Format("delete from PERFILESDavidRangel where clave = '{0}'", clave);
+                    dataAdapter = new SqlDataAdapter(setencia, con);
+                    dataAdapter.Fill(datos);
+                    con.Close();
                     actualizarTabla();
-                }                          
+                }
             }
+            arrTextBoxs.ToList().ForEach((x) => x.Clear());
+            txtClaveEliminar.Clear();
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -291,7 +267,7 @@ namespace PROG2EVA1_DavidRangel
                 {
                     bool usuarioExiste = false;
 
-                    SqlConnection con = new SqlConnection(ruta);
+                    SqlConnection con = new SqlConnection(rutaBDD);
                     con.Open();
                     DataTable datos = new DataTable();
                     string setencia = String.Format("select * from PERFILESDavidRangel");
@@ -315,18 +291,58 @@ namespace PROG2EVA1_DavidRangel
                         {
                             con.Open();
                             datos = new DataTable();
-                            setencia = String.Format("update PERFILESDavidRangel set nombre='{1}', appat='{2}',apmat='{3}',clave='{4}',nivel={5} where rut = '{0}'", rut, nombre, paterno, materno, clave, nivelIngresar);
+                            setencia = String.Format("select * from ACCIONESDavidRangel where clave = (select clave from PERFILESDavidRangel where rut = '{0}')", rut);
                             dataAdapter = new SqlDataAdapter(setencia, con);
                             dataAdapter.Fill(datos);
                             con.Close();
+
+                            if (datos.Rows.Count > 0)
+                            {
+                                con.Open();
+                                DataTable eliminarDatos = new DataTable();
+                                setencia = String.Format("delete from ACCIONESDavidRangel where clave = (select clave from PERFILESDavidRangel where rut = '{0}')", rut);
+                                dataAdapter = new SqlDataAdapter(setencia, con);
+                                dataAdapter.Fill(eliminarDatos);
+                                con.Close();
+
+                                con.Open();
+                                DataTable modificarDatos = new DataTable();
+                                setencia = String.Format("update PERFILESDavidRangel set nombre='{1}', appat='{2}',apmat='{3}',clave='{4}',nivel={5} where rut = '{0}'", rut, nombre, paterno, materno, clave, nivelIngresar);
+                                dataAdapter = new SqlDataAdapter(setencia, con);
+                                dataAdapter.Fill(modificarDatos);
+                                con.Close();
+
+                                foreach (DataRow fila in datos.Rows)
+                                {
+                                    fila[1] = clave;
+                                    con.Open();
+
+                                    DataTable insertarDatos = new DataTable();
+                                    setencia = String.Format("SET IDENTITY_INSERT accionesdavidrangel on insert into ACCIONESDavidRangel (num, clave, iniciosesion, finsesion, accion, accionf) values " +
+                                        "({0},'{1}', '{2}', '{3}', '{4}', '{5}') SET IDENTITY_INSERT accionesdavidrangel off", fila[0], fila[1], fila[2], fila[3], fila[4], fila[5]);
+                                    dataAdapter = new SqlDataAdapter(setencia, con);
+                                    dataAdapter.Fill(insertarDatos);
+                                    con.Close();
+                                }                   
+                                formatearCampoClave();
+                            }
+                            else
+                            {
+                                con.Open();
+                                DataTable modificarDatos = new DataTable();
+                                setencia = String.Format("update PERFILESDavidRangel set nombre='{1}', appat='{2}',apmat='{3}',clave='{4}',nivel={5} where rut = '{0}'", rut, nombre, paterno, materno, clave, nivelIngresar);
+                                dataAdapter = new SqlDataAdapter(setencia, con);
+                                dataAdapter.Fill(modificarDatos);
+                                con.Close();
+                            }
+
                             MessageBox.Show("Usuario modificado");
                             actualizarTabla();
 
-                            bool modificasTuPerfil = rut == toolStripTextBox1.Text;
-                            if (modificasTuPerfil && nivelIngresar == 1)
+                            if (rut == this.rut && nivelIngresar == 1)
                             {
-                                MessageBox.Show("Ya no tienes permisos de admin");
-                                volverToolStripMenuItem.PerformClick();
+                                MessageBox.Show("Ya no tienes permisos");
+                                this.DialogResult = DialogResult.No;
                             }
                         }
                     }
@@ -337,6 +353,128 @@ namespace PROG2EVA1_DavidRangel
                 }
                 arrTextBoxs.ToList().ForEach((x) => x.Clear());
             }
+        }
+
+        
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            SqlConnection con = new SqlConnection(rutaBDD);
+            con.Open();
+            DataTable datos = new DataTable();
+            string setencia = String.Format("select * from PERFILESDavidRangel where clave = '{0}'", txtClaveEliminar.Text);
+            SqlDataAdapter dataAdapter = new SqlDataAdapter(setencia, con);
+            dataAdapter.Fill(datos);
+            con.Close();
+
+            if (datos.Rows.Count > 0)
+            {
+                eliminarRegistro(txtClaveEliminar.Text);
+            }
+            else
+            {
+                MessageBox.Show("Perfil no existe. Revise las mayúsculas o minúsculas.");
+            }
+            arrTextBoxs.ToList().ForEach((x) => x.Clear());
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            SqlConnection con = new SqlConnection(rutaBDD);
+            con.Open();
+            DataTable datos = new DataTable();
+            string setencia = String.Format("select * from PERFILESDavidRangel where appat = '{0}'", txtPaterno.Text);
+            SqlDataAdapter dataAdapter = new SqlDataAdapter(setencia, con);
+            dataAdapter.Fill(datos);
+            con.Close();
+
+            if (datos.Rows.Count > 0)
+            {
+                dataGridView1.DataSource = datos;
+                dataGridView1.Columns[0].HeaderText = "Rut";
+                dataGridView1.Columns[1].HeaderText = "Nombre";
+                dataGridView1.Columns[2].HeaderText = "Apellido Pat";
+                dataGridView1.Columns[3].HeaderText = "Apellido Mat";
+                dataGridView1.Columns[4].HeaderText = "Clave";
+                dataGridView1.Columns[5].HeaderText = "Nivel";
+
+                for (int i = 0; i < dataGridView1.RowCount; i++)
+                {
+                    dataGridView1.Rows[i].ContextMenuStrip = contextMenuStrip1;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Perfiles con ese apellido no existen");
+            }
+            arrTextBoxs.ToList().ForEach((x) => x.Clear());
+        }
+
+        private void mostrarTodoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            actualizarTabla();
+        }
+
+        string rutaArchivo = @"C:\TXTS\VIGIADAVIDRANGEL.txt";
+        void formatearCampoClave()
+        {
+            StreamReader sr = new StreamReader(rutaArchivo);
+            String lectura;
+            lectura = sr.ReadLine();
+            List<string[]> matriz = new List<string[]>();
+            while (lectura != null)
+            {
+                string[] registro = lectura.Split(';');
+
+                if (registro[0] != "clave")
+                {
+                    matriz.Add(registro);
+                }
+
+                lectura = sr.ReadLine();
+            }
+            sr.Close();
+
+
+            SqlConnection con = new SqlConnection(rutaBDD);
+            con.Open();
+            DataTable perfiles = new DataTable();
+            string setencia = String.Format("select Rut, Nombre, ApPat, ApMat from PERFILESDavidRangel");
+            SqlDataAdapter dataAdapter = new SqlDataAdapter(setencia, con);
+            dataAdapter.Fill(perfiles);
+            con.Close();
+
+            //Recorro la informacion del txt
+            foreach (string[] registro in matriz)
+            {
+                //busco si el rut que está en el txt está en la BDD
+                foreach (DataRow fila in perfiles.Rows)
+                {
+                    string nombre = fila[1].ToString();
+                    string paterno = fila[2].ToString();
+                    string materno = fila[3].ToString();
+                    string rut = fila[0].ToString();
+
+                    if ((rut == registro[0]) || (registro[0].Length == 13 && rut == registro[0].Substring(3)))
+                    {
+                        registro[0] = nombre[0].ToString() + paterno[0].ToString() + materno[0].ToString() + rut;
+                    }
+                }
+            }
+
+            string headers = "clave;inicioSesion;finSesion;accion;accionF\n";
+            File.WriteAllText(rutaArchivo, headers);
+
+
+            StreamWriter sw = File.AppendText(rutaArchivo);
+            //! 18-05: foreach para recorrer toda la lista 
+            foreach (string[] registro in matriz)
+            {
+                string fila = String.Format("{0};{1};{2};{3};{4}", registro[0], registro[1], registro[2], registro[3], registro[4]);
+
+                sw.WriteLine(fila);
+            }
+            sw.Close();
         }
     }
 }

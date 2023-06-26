@@ -19,8 +19,8 @@ namespace PROG2EVA1_DavidRangel
             InitializeComponent();
         }
 
-        string rutaArchivo = Application.StartupPath + @"\archivo\VIGIADAVIDRANGEL.txt";
-        string rutaBDD;
+        string rutaArchivo = @"C:\TXTS\VIGIADAVIDRANGEL.txt";
+        string rutaBDD = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"C:\\basesLeones\\BDDPROG2DavidRangel.mdf\";Integrated Security=True";
         private void button2_Click(object sender, EventArgs e)
         {
             /*! 18-05:
@@ -82,8 +82,9 @@ namespace PROG2EVA1_DavidRangel
                     }
                     else
                     {
+                        string rutRegistro = registro[0].Length == 13 ? registro[0].Substring(3) : registro[0];
                         //! 18-05: si la primera celda (rut) del registro corresponde al mismo rut que se escribió, se muestra
-                        if (registro[0] == Op.ponerMinusculas(textBox2.Text.PadLeft(10, '0')))
+                        if (rutRegistro == Op.ponerMinusculas(textBox2.Text.PadLeft(10, '0')))
                         {
                             dataGridView1.Rows.Add(registro);
                         }
@@ -101,10 +102,6 @@ namespace PROG2EVA1_DavidRangel
 
         private void PantallaLog_Load(object sender, EventArgs e)
         {
-            string rutaAplicacion = Application.StartupPath;
-            int diferencia = rutaAplicacion.Length - 9;
-            string bdd = rutaAplicacion.Remove(diferencia, 9);
-            rutaBDD = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"" + bdd + "BDDPROG2DavidRangel.mdf\";Integrated Security=True";
             dataGridView1.ColumnCount = 5;
         }
 
@@ -152,6 +149,7 @@ namespace PROG2EVA1_DavidRangel
                 lectura = sr.ReadLine();
             }
             sr.Close();
+            button2.PerformClick();
             MessageBox.Show("Registros subidos a la BDD");
         } 
         
@@ -262,7 +260,7 @@ namespace PROG2EVA1_DavidRangel
                     string materno = fila[3].ToString();
                     string rut = fila[0].ToString();
 
-                    if (rut == registro[0])
+                    if ((rut == registro[0]) || (registro[0].Length == 13 && rut == registro[0].Substring(3)))
                     {
                         registro[0] = nombre[0].ToString() + paterno[0].ToString() + materno[0].ToString() + rut;
                     }
@@ -282,6 +280,39 @@ namespace PROG2EVA1_DavidRangel
                 sw.WriteLine(fila);
             }
             sw.Close();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            formatearCampoClave();
+
+            StreamReader sr = new StreamReader(rutaArchivo);
+            String lectura;
+            lectura = sr.ReadLine();
+
+            while (lectura != null)
+            {
+                string[] registro = lectura.Split(';');
+
+                if (registro[0] != "clave")
+                {
+                    if (registro[2] == "")
+                    {
+                        registro[2] = Op.parseDateTime(DateTime.MinValue, 1);
+                    }
+
+                    string rutRegistro = registro[0].Substring(3);
+                    if (rutRegistro == Op.ponerMinusculas(textBox2.Text.PadLeft(10, '0')))
+                    {
+                        insertarRegistroEnBDD(registro[0], registro[1], registro[2], registro[3], registro[4]);
+                    }
+                }
+
+                lectura = sr.ReadLine();
+            }
+            sr.Close();
+            button2.PerformClick();
+            MessageBox.Show("Registros subidos a la BDD");
         }
     }
 }

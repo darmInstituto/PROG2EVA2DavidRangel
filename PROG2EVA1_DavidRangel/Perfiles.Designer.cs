@@ -45,11 +45,12 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.eliminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.adminToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
-            this.validarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.volverToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.limpiarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mostrarTodoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.txtClaveEliminar = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -57,7 +58,7 @@
             // 
             // btnIngresar
             // 
-            this.btnIngresar.Location = new System.Drawing.Point(78, 204);
+            this.btnIngresar.Location = new System.Drawing.Point(135, 203);
             this.btnIngresar.Name = "btnIngresar";
             this.btnIngresar.Size = new System.Drawing.Size(94, 35);
             this.btnIngresar.TabIndex = 0;
@@ -68,7 +69,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(104, 41);
+            this.label1.Location = new System.Drawing.Point(115, 40);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(39, 20);
             this.label1.TabIndex = 1;
@@ -76,22 +77,22 @@
             // 
             // txtRut
             // 
-            this.txtRut.Location = new System.Drawing.Point(149, 38);
+            this.txtRut.Location = new System.Drawing.Point(160, 37);
             this.txtRut.Name = "txtRut";
-            this.txtRut.Size = new System.Drawing.Size(123, 26);
+            this.txtRut.Size = new System.Drawing.Size(169, 26);
             this.txtRut.TabIndex = 2;
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(149, 70);
+            this.txtNombre.Location = new System.Drawing.Point(160, 69);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(123, 26);
+            this.txtNombre.Size = new System.Drawing.Size(169, 26);
             this.txtNombre.TabIndex = 4;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(74, 73);
+            this.label2.Location = new System.Drawing.Point(85, 72);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(69, 20);
             this.label2.TabIndex = 3;
@@ -99,15 +100,15 @@
             // 
             // txtPaterno
             // 
-            this.txtPaterno.Location = new System.Drawing.Point(149, 102);
+            this.txtPaterno.Location = new System.Drawing.Point(160, 101);
             this.txtPaterno.Name = "txtPaterno";
-            this.txtPaterno.Size = new System.Drawing.Size(123, 26);
+            this.txtPaterno.Size = new System.Drawing.Size(169, 26);
             this.txtPaterno.TabIndex = 6;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(14, 105);
+            this.label3.Location = new System.Drawing.Point(25, 104);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(129, 20);
             this.label3.TabIndex = 5;
@@ -115,15 +116,15 @@
             // 
             // txtMaterno
             // 
-            this.txtMaterno.Location = new System.Drawing.Point(149, 134);
+            this.txtMaterno.Location = new System.Drawing.Point(160, 133);
             this.txtMaterno.Name = "txtMaterno";
-            this.txtMaterno.Size = new System.Drawing.Size(123, 26);
+            this.txtMaterno.Size = new System.Drawing.Size(169, 26);
             this.txtMaterno.TabIndex = 8;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(11, 137);
+            this.label4.Location = new System.Drawing.Point(22, 136);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(132, 20);
             this.label4.TabIndex = 7;
@@ -131,7 +132,7 @@
             // 
             // txtNivel
             // 
-            this.txtNivel.Location = new System.Drawing.Point(149, 166);
+            this.txtNivel.Location = new System.Drawing.Point(160, 165);
             this.txtNivel.Name = "txtNivel";
             this.txtNivel.Size = new System.Drawing.Size(123, 26);
             this.txtNivel.TabIndex = 12;
@@ -139,7 +140,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(97, 169);
+            this.label6.Location = new System.Drawing.Point(108, 168);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(46, 20);
             this.label6.TabIndex = 11;
@@ -153,19 +154,19 @@
             this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.dataGridView1.Location = new System.Drawing.Point(297, 0);
+            this.dataGridView1.Location = new System.Drawing.Point(356, 0);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(404, 297);
+            this.dataGridView1.Size = new System.Drawing.Size(404, 359);
             this.dataGridView1.TabIndex = 13;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridView1.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseDown);
             // 
             // btnModificar
             // 
-            this.btnModificar.Location = new System.Drawing.Point(178, 204);
+            this.btnModificar.Location = new System.Drawing.Point(235, 203);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(94, 35);
             this.btnModificar.TabIndex = 14;
@@ -191,46 +192,13 @@
             // 
             this.menuStrip1.BackColor = System.Drawing.SystemColors.Control;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.adminToolStripMenuItem,
-            this.volverToolStripMenuItem,
-            this.limpiarToolStripMenuItem});
+            this.limpiarToolStripMenuItem,
+            this.mostrarTodoToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(297, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(356, 24);
             this.menuStrip1.TabIndex = 16;
             this.menuStrip1.Text = "menuStrip1";
-            // 
-            // adminToolStripMenuItem
-            // 
-            this.adminToolStripMenuItem.BackColor = System.Drawing.SystemColors.Control;
-            this.adminToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripTextBox1,
-            this.validarToolStripMenuItem});
-            this.adminToolStripMenuItem.Name = "adminToolStripMenuItem";
-            this.adminToolStripMenuItem.Size = new System.Drawing.Size(55, 20);
-            this.adminToolStripMenuItem.Text = "Admin";
-            // 
-            // toolStripTextBox1
-            // 
-            this.toolStripTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.toolStripTextBox1.Name = "toolStripTextBox1";
-            this.toolStripTextBox1.Size = new System.Drawing.Size(100, 23);
-            this.toolStripTextBox1.ToolTipText = "Ingresa rut de admin";
-            // 
-            // validarToolStripMenuItem
-            // 
-            this.validarToolStripMenuItem.Name = "validarToolStripMenuItem";
-            this.validarToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
-            this.validarToolStripMenuItem.Text = "Validar";
-            this.validarToolStripMenuItem.Click += new System.EventHandler(this.validarToolStripMenuItem_Click);
-            // 
-            // volverToolStripMenuItem
-            // 
-            this.volverToolStripMenuItem.Name = "volverToolStripMenuItem";
-            this.volverToolStripMenuItem.Size = new System.Drawing.Size(51, 20);
-            this.volverToolStripMenuItem.Text = "Volver";
-            this.volverToolStripMenuItem.Visible = false;
-            this.volverToolStripMenuItem.Click += new System.EventHandler(this.volverToolStripMenuItem_Click);
             // 
             // limpiarToolStripMenuItem
             // 
@@ -239,11 +207,59 @@
             this.limpiarToolStripMenuItem.Text = "Limpiar";
             this.limpiarToolStripMenuItem.Click += new System.EventHandler(this.limpiarToolStripMenuItem_Click);
             // 
+            // mostrarTodoToolStripMenuItem
+            // 
+            this.mostrarTodoToolStripMenuItem.Name = "mostrarTodoToolStripMenuItem";
+            this.mostrarTodoToolStripMenuItem.Size = new System.Drawing.Size(88, 20);
+            this.mostrarTodoToolStripMenuItem.Text = "Mostrar todo";
+            this.mostrarTodoToolStripMenuItem.Visible = false;
+            this.mostrarTodoToolStripMenuItem.Click += new System.EventHandler(this.mostrarTodoToolStripMenuItem_Click);
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Location = new System.Drawing.Point(235, 244);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(94, 35);
+            this.btnEliminar.TabIndex = 17;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(213, 285);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(116, 52);
+            this.button1.TabIndex = 18;
+            this.button1.Text = "Buscar por Apellido Pat";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // txtClaveEliminar
+            // 
+            this.txtClaveEliminar.Location = new System.Drawing.Point(83, 248);
+            this.txtClaveEliminar.Name = "txtClaveEliminar";
+            this.txtClaveEliminar.Size = new System.Drawing.Size(146, 26);
+            this.txtClaveEliminar.TabIndex = 19;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(25, 251);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(52, 20);
+            this.label5.TabIndex = 20;
+            this.label5.Text = "Clave:";
+            // 
             // Perfiles
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(701, 297);
+            this.ClientSize = new System.Drawing.Size(760, 359);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.txtClaveEliminar);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.dataGridView1);
@@ -292,10 +308,11 @@
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem eliminarToolStripMenuItem;
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem adminToolStripMenuItem;
-        private System.Windows.Forms.ToolStripTextBox toolStripTextBox1;
-        private System.Windows.Forms.ToolStripMenuItem validarToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem volverToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem limpiarToolStripMenuItem;
+        private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ToolStripMenuItem mostrarTodoToolStripMenuItem;
+        private System.Windows.Forms.TextBox txtClaveEliminar;
+        private System.Windows.Forms.Label label5;
     }
 }

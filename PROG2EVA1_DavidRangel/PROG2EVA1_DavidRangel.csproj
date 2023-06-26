@@ -74,6 +74,12 @@
     <Compile Include="JuegoMemoria.Designer.cs">
       <DependentUpon>JuegoMemoria.cs</DependentUpon>
     </Compile>
+    <Compile Include="Menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menu.Designer.cs">
+      <DependentUpon>Menu.cs</DependentUpon>
+    </Compile>
     <Compile Include="PantallaLog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -94,6 +100,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="JuegoMemoria.resx">
       <DependentUpon>JuegoMemoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menu.resx">
+      <DependentUpon>Menu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PantallaLog.resx">
       <DependentUpon>PantallaLog.cs</DependentUpon>
@@ -132,15 +141,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="bin\Debug\one-piece-4k-anime-logo-s217ktu7edueio0v.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="BDDPROG2DavidRangel.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="BDDPROG2DavidRangel_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>BDDPROG2DavidRangel.mdf</DependentUpon>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">

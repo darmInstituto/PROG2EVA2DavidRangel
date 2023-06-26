@@ -35,7 +35,7 @@ namespace PROG2EVA1_DavidRangel
         List<ClaseEvalua2DavidRangel> ListaEvalua2DavidRangel;
 
         //! 18-05: ruta del archivo txt
-        string ruta = Application.StartupPath + @"\archivo\VIGIADAVIDRANGEL.txt";
+        string ruta = @"C:\TXTS\VIGIADAVIDRANGEL.txt";
 
         //! 18-05: numero de coincidencias conseguidas
         int coincidencias = 0;
@@ -82,7 +82,7 @@ namespace PROG2EVA1_DavidRangel
                 }
                 else
                 {
-                    fechaFin = Op.parseDateTime(usuario.getFin(), 2);
+                    fechaFin = Op.parseDateTime(usuario.getFin(), 1);
                 }
                 /*! 18-05: 
                  * Format es una funcion que permite colocar los valores de varias variables dentro de un texto
@@ -91,7 +91,8 @@ namespace PROG2EVA1_DavidRangel
                  * {1} -> usuario.getInicio() 
                  * {2} -> fechaFin y así sucesivamente
                  */
-                string registro = String.Format("{0};{1};{2};{3};{4}", usuario.getRut(), Op.parseDateTime(usuario.getInicio(), 2), fechaFin, usuario.getAccion(), Op.parseDateTime(usuario.getAccionF(), 2));
+               
+                string registro = String.Format("{0};{1};{2};{3};{4}", usuario.getRut(), Op.parseDateTime(usuario.getInicio(), 1), fechaFin, usuario.getAccion(), Op.parseDateTime(usuario.getAccionF(), 1));
                 //! 18-05: Se escribe el registro en el txt
                 sw.WriteLine(registro);
             }

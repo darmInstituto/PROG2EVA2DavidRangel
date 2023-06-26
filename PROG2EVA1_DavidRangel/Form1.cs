@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -17,30 +18,58 @@ namespace PROG2EVA1_DavidRangel
         {
             InitializeComponent();
         }
+        string rutaArchivo = @"C:\TXTS\VIGIADAVIDRANGEL.txt";
+        string rutaBDD = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"C:\\basesLeones\\BDDPROG2DavidRangel.mdf\";Integrated Security=True";
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string rut = Op.ponerMinusculas(textBox1.Text);
-            
+            string rut = Op.ponerMinusculas(textBox1.Text.PadLeft(10,'0'));
+
             if (Op.validarRut(rut) == true)
             {
-                JuegoMemoria form2 = new JuegoMemoria(rut.PadLeft(10, '0'));
-                form2.ShowDialog();
+                SqlConnection con = new SqlConnection(rutaBDD);
+                con.Open();
+                DataTable datos = new DataTable();
+                string setencia = String.Format("select nivel from PERFILESDavidRangel where rut='{0}'", rut);
+                SqlDataAdapter dataAdapter = new SqlDataAdapter(setencia, con);
+                dataAdapter.Fill(datos);
+                con.Close();
+
+
+                if (datos.Rows.Count > 0)
+                {
+                    int nivel = int.Parse(datos.Rows[0][0].ToString());
+                    if (nivel == 1)
+                    {
+                        JuegoMemoria juegoMemoria = new JuegoMemoria(rut);
+                        juegoMemoria.ShowDialog();
+                    }
+                    else
+                    {
+                        Menu menu = new Menu(rut, nivel);
+                        menu.ShowDialog();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Tiene que registrar su rut (sign up)");
+                }           
             }
             textBox1.Clear();
         }
 
-        string ruta = Application.StartupPath + @"\archivo\VIGIADAVIDRANGEL.txt";
+
+        
 
         private void Form1_Load(object sender, EventArgs e)
-        {
+        {           
             this.BackgroundImage = Image.FromFile(Application.StartupPath + @"\imagenes\fondorut.jpg");
             //! 18-05: se determina si existe o no el archivo
-            bool existe = File.Exists(ruta);
+            bool existe = File.Exists(rutaArchivo);
             
             if (existe)
             {
-                StreamReader sr = new StreamReader(ruta);
+                StreamReader sr = new StreamReader(rutaArchivo);
                 string lectura;
                 lectura = sr.ReadLine();
                 //! 18-05: si los encabezados están malos, se limipia el archivo
@@ -48,7 +77,7 @@ namespace PROG2EVA1_DavidRangel
                 {
                     string headers = "clave;inicioSesion;finSesion;accion;accionF\n";
                     sr.Close();
-                    File.WriteAllText(ruta, headers);
+                    File.WriteAllText(rutaArchivo, headers);
                 }
                 else
                 {
@@ -60,7 +89,7 @@ namespace PROG2EVA1_DavidRangel
             {
                 //! 18-05: si no existe, se crea
                 string headers = "clave;inicioSesion;finSesion;accion;accionF\n";
-                File.WriteAllText(ruta, headers);
+                File.WriteAllText(rutaArchivo, headers);
             }
         }
 
@@ -69,11 +98,7 @@ namespace PROG2EVA1_DavidRangel
             Application.Exit();       
         }
 
-        private void button2_Click_1(object sender, EventArgs e)
-        {
-            PantallaLog pantallaLog = new PantallaLog();
-            pantallaLog.ShowDialog();                    
-        }
+        
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
