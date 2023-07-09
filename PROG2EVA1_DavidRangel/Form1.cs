@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Data.SqlClient;
 using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace PROG2EVA1_DavidRangel
 {
@@ -19,27 +19,27 @@ namespace PROG2EVA1_DavidRangel
             InitializeComponent();
         }
         string rutaArchivo = @"C:\TXTS\VIGIADAVIDRANGEL.txt";
-        string rutaBDD = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"C:\\basesLeones\\BDDPROG2DavidRangel.mdf\";Integrated Security=True";
+        string rutaBDD = "Server=127.0.0.1;User=root;Database=BDDPROG2DavidRangel;password=''";
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string rut = Op.ponerMinusculas(textBox1.Text.PadLeft(10,'0'));
+            string rut = Op.ponerMinusculas(txtRut.Text.PadLeft(10,'0'));
+            string clave = txtClave.Text;
 
             if (Op.validarRut(rut) == true)
             {
-                SqlConnection con = new SqlConnection(rutaBDD);
+                MySqlConnection con = new MySqlConnection(rutaBDD);
                 con.Open();
                 DataTable datos = new DataTable();
                 string setencia = String.Format("select nivel from PERFILESDavidRangel where rut='{0}'", rut);
-                SqlDataAdapter dataAdapter = new SqlDataAdapter(setencia, con);
+                MySqlDataAdapter dataAdapter = new MySqlDataAdapter(setencia, con);
                 dataAdapter.Fill(datos);
                 con.Close();
-
 
                 if (datos.Rows.Count > 0)
                 {
                     int nivel = int.Parse(datos.Rows[0][0].ToString());
-                    if (nivel == 1)
+                    if (nivel == 2)
                     {
                         JuegoMemoria juegoMemoria = new JuegoMemoria(rut);
                         juegoMemoria.ShowDialog();
@@ -55,7 +55,7 @@ namespace PROG2EVA1_DavidRangel
                     MessageBox.Show("Tiene que registrar su rut (sign up)");
                 }           
             }
-            textBox1.Clear();
+            txtRut.Clear();
         }
 
 
@@ -82,8 +82,7 @@ namespace PROG2EVA1_DavidRangel
                 else
                 {
                     sr.Close();
-                }
-                
+                }             
             }
             else
             {
@@ -109,6 +108,12 @@ namespace PROG2EVA1_DavidRangel
         {
             Perfiles perfiles = new Perfiles();
             perfiles.ShowDialog();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Creditos creditos = new Creditos();
+            creditos.ShowDialog();
         }
     }
 }

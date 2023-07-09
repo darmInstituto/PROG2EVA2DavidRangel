@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Data.SqlClient;
+using MySql.Data.MySqlClient;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -20,7 +20,7 @@ namespace PROG2EVA1_DavidRangel
         }
 
         string rutaArchivo = @"C:\TXTS\VIGIADAVIDRANGEL.txt";
-        string rutaBDD = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"C:\\basesLeones\\BDDPROG2DavidRangel.mdf\";Integrated Security=True";
+        string rutaBDD = "Server=127.0.0.1;User=root;Database=BDDPROG2DavidRangel;password=''";
         private void button2_Click(object sender, EventArgs e)
         {
             /*! 18-05:
@@ -156,11 +156,11 @@ namespace PROG2EVA1_DavidRangel
 
         void insertarRegistroEnBDD(string clave, string inicio, string fin, string accion, string accionF)
         {
-            SqlConnection con = new SqlConnection(rutaBDD);
+            MySqlConnection con = new MySqlConnection(rutaBDD);
             con.Open();
             DataTable datos = new DataTable();
             string setencia = String.Format("select rut from PERFILESDavidRangel");
-            SqlDataAdapter dataAdapter = new SqlDataAdapter(setencia, con);
+            MySqlDataAdapter dataAdapter = new MySqlDataAdapter(setencia, con);
             dataAdapter.Fill(datos);
             con.Close();
 
@@ -179,7 +179,7 @@ namespace PROG2EVA1_DavidRangel
                 con.Open();
                 datos = new DataTable();
                 setencia = String.Format("select clave, iniciosesion, finsesion, accion, accionf from ACCIONESDavidRangel where clave='{0}'", clave);
-                dataAdapter = new SqlDataAdapter(setencia, con);
+                dataAdapter = new MySqlDataAdapter(setencia, con);
                 dataAdapter.Fill(datos);
                 con.Close();
 
@@ -212,7 +212,7 @@ namespace PROG2EVA1_DavidRangel
                     setencia = String.Format("insert into ACCIONESDavidRangel (clave, iniciosesion, finsesion, accion, accionf) values " +
                         "('{0}', '{1}', '{2}', '{3}', '{4}')", clave, inicio, fin, accion, accionF);
 
-                    dataAdapter = new SqlDataAdapter(setencia, con);
+                    dataAdapter = new MySqlDataAdapter(setencia, con);
                     dataAdapter.Fill(datos);
                     con.Close();
                 }              
@@ -241,11 +241,11 @@ namespace PROG2EVA1_DavidRangel
             sr.Close();
 
 
-            SqlConnection con = new SqlConnection(rutaBDD);
+            MySqlConnection con = new MySqlConnection(rutaBDD);
             con.Open();
             DataTable perfiles = new DataTable();
             string setencia = String.Format("select Rut, Nombre, ApPat, ApMat from PERFILESDavidRangel");
-            SqlDataAdapter dataAdapter = new SqlDataAdapter(setencia, con);
+            MySqlDataAdapter dataAdapter = new MySqlDataAdapter(setencia, con);
             dataAdapter.Fill(perfiles);
             con.Close();
 

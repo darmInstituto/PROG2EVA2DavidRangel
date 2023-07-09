@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Data.SqlClient;
+using MySql.Data.MySqlClient;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -18,7 +18,7 @@ namespace PROG2EVA1_DavidRangel
         {
             InitializeComponent();
             rut = "";
-            nivel = 1;
+            nivel = 2;
         }
         public Perfiles(string rut, int nivel)
         {
@@ -28,30 +28,30 @@ namespace PROG2EVA1_DavidRangel
         }
 
         string rut;
-        string rutaBDD = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"C:\\basesLeones\\BDDPROG2DavidRangel.mdf\";Integrated Security=True";
+        string rutaBDD = "Server=127.0.0.1;User=root;Database=BDDPROG2DavidRangel;password=''";
         int nivel;
         TextBox[] arrTextBoxs;
         private void Perfiles_Load(object sender, EventArgs e)
         {
             arrTextBoxs = new TextBox[5] { txtRut, txtNombre, txtPaterno, txtMaterno, txtNivel };
                             
-            if (nivel == 1)
+            if (nivel == 2)
             {
-                label5.Visible = false;
-                txtClaveEliminar.Visible = false;
+                groupBox1.Visible = false;
+                txtBusqueda.Visible = false;
                 btnEliminar.Visible = false;
                 button1.Visible = false;
                 btnModificar.Visible = false;
                 label6.Visible = false;
                 txtNivel.Visible = false;
                 dataGridView1.Visible = false;
-                this.Size = new System.Drawing.Size(390, 296);
+                this.Size = new System.Drawing.Size(420, 296);
                 btnIngresar.Location = new System.Drawing.Point(165, 180);
             }
             else
             {
-                label5.Visible = true;
-                txtClaveEliminar.Visible = true;
+                groupBox1.Visible = true;
+                txtBusqueda.Visible = true;
 
                 mostrarTodoToolStripMenuItem.Visible = true;
                 btnEliminar.Visible = true;
@@ -60,7 +60,7 @@ namespace PROG2EVA1_DavidRangel
                 label6.Visible = true;
                 txtNivel.Visible = true;
                 dataGridView1.Visible = true;
-                this.Size = new System.Drawing.Size(776, 398);
+                
                             
             }
             actualizarTabla();
@@ -68,12 +68,12 @@ namespace PROG2EVA1_DavidRangel
 
         void actualizarTabla()
         {
-            SqlConnection con = new SqlConnection(rutaBDD);
+            MySqlConnection con = new MySqlConnection(rutaBDD);
 
             con.Open();
             DataTable datos = new DataTable();
             string setencia = String.Format("select * from PERFILESDavidRangel");
-            SqlDataAdapter dataAdapter = new SqlDataAdapter(setencia, con);
+            MySqlDataAdapter dataAdapter = new MySqlDataAdapter(setencia, con);
             dataAdapter.Fill(datos);
             con.Close();
 
@@ -107,15 +107,15 @@ namespace PROG2EVA1_DavidRangel
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
-            if (nivel == 1)
+            if (nivel == 2)
             {
-                txtNivel.Text = "1";
+                txtNivel.Text = "2";
             }
-            SqlConnection con = new SqlConnection(rutaBDD);
+            MySqlConnection con = new MySqlConnection(rutaBDD);
             con.Open();
             DataTable datos = new DataTable();
             string setencia = String.Format("select * from PERFILESDavidRangel");
-            SqlDataAdapter dataAdapter = new SqlDataAdapter(setencia, con);
+            MySqlDataAdapter dataAdapter = new MySqlDataAdapter(setencia, con);
             dataAdapter.Fill(datos);
             con.Close();
 
@@ -138,7 +138,7 @@ namespace PROG2EVA1_DavidRangel
                 string materno = txtMaterno.Text;
                 
                 string clave = nombre[0].ToString() + paterno[0].ToString() + materno[0].ToString() + rut;
-                int nivelIngresar = nivel != 1 ? int.Parse(txtNivel.Text) : 1;
+                int nivelIngresar = nivel != 2 ? int.Parse(txtNivel.Text) : 2;
 
                 bool usuarioExiste = false;
 
@@ -158,7 +158,7 @@ namespace PROG2EVA1_DavidRangel
                         con.Open();
                         datos = new DataTable();
                         setencia = String.Format("insert into PERFILESDavidRangel (rut, nombre, appat, apmat, clave, nivel) values ('{0}','{1}','{2}','{3}','{4}',{5})", rut,nombre,paterno,materno,clave,nivelIngresar);
-                        dataAdapter = new SqlDataAdapter(setencia, con);
+                        dataAdapter = new MySqlDataAdapter(setencia, con);
                         dataAdapter.Fill(datos);
                         con.Close();
                         MessageBox.Show("Usuario ingresado");
@@ -188,26 +188,26 @@ namespace PROG2EVA1_DavidRangel
                 }
                 else
                 {
-                    SqlConnection con = new SqlConnection(rutaBDD);
+                    MySqlConnection con = new MySqlConnection(rutaBDD);
 
                     con.Open();
                     DataTable datos = new DataTable();
                     string setencia = String.Format("delete from ACCIONESDavidRangel where clave = '{0}'", clave);
-                    SqlDataAdapter dataAdapter = new SqlDataAdapter(setencia, con);
+                    MySqlDataAdapter dataAdapter = new MySqlDataAdapter(setencia, con);
                     dataAdapter.Fill(datos);
                     con.Close();
                    
                     con.Open();
                     datos = new DataTable();
                     setencia = String.Format("delete from PERFILESDavidRangel where clave = '{0}'", clave);
-                    dataAdapter = new SqlDataAdapter(setencia, con);
+                    dataAdapter = new MySqlDataAdapter(setencia, con);
                     dataAdapter.Fill(datos);
                     con.Close();
                     actualizarTabla();
                 }
             }
             arrTextBoxs.ToList().ForEach((x) => x.Clear());
-            txtClaveEliminar.Clear();
+            txtBusqueda.Clear();
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -267,11 +267,11 @@ namespace PROG2EVA1_DavidRangel
                 {
                     bool usuarioExiste = false;
 
-                    SqlConnection con = new SqlConnection(rutaBDD);
+                    MySqlConnection con = new MySqlConnection(rutaBDD);
                     con.Open();
                     DataTable datos = new DataTable();
                     string setencia = String.Format("select * from PERFILESDavidRangel");
-                    SqlDataAdapter dataAdapter = new SqlDataAdapter(setencia, con);
+                    MySqlDataAdapter dataAdapter = new MySqlDataAdapter(setencia, con);
                     dataAdapter.Fill(datos);
                     con.Close();
 
@@ -292,7 +292,7 @@ namespace PROG2EVA1_DavidRangel
                             con.Open();
                             datos = new DataTable();
                             setencia = String.Format("select * from ACCIONESDavidRangel where clave = (select clave from PERFILESDavidRangel where rut = '{0}')", rut);
-                            dataAdapter = new SqlDataAdapter(setencia, con);
+                            dataAdapter = new MySqlDataAdapter(setencia, con);
                             dataAdapter.Fill(datos);
                             con.Close();
 
@@ -301,14 +301,14 @@ namespace PROG2EVA1_DavidRangel
                                 con.Open();
                                 DataTable eliminarDatos = new DataTable();
                                 setencia = String.Format("delete from ACCIONESDavidRangel where clave = (select clave from PERFILESDavidRangel where rut = '{0}')", rut);
-                                dataAdapter = new SqlDataAdapter(setencia, con);
+                                dataAdapter = new MySqlDataAdapter(setencia, con);
                                 dataAdapter.Fill(eliminarDatos);
                                 con.Close();
 
                                 con.Open();
                                 DataTable modificarDatos = new DataTable();
                                 setencia = String.Format("update PERFILESDavidRangel set nombre='{1}', appat='{2}',apmat='{3}',clave='{4}',nivel={5} where rut = '{0}'", rut, nombre, paterno, materno, clave, nivelIngresar);
-                                dataAdapter = new SqlDataAdapter(setencia, con);
+                                dataAdapter = new MySqlDataAdapter(setencia, con);
                                 dataAdapter.Fill(modificarDatos);
                                 con.Close();
 
@@ -320,7 +320,7 @@ namespace PROG2EVA1_DavidRangel
                                     DataTable insertarDatos = new DataTable();
                                     setencia = String.Format("SET IDENTITY_INSERT accionesdavidrangel on insert into ACCIONESDavidRangel (num, clave, iniciosesion, finsesion, accion, accionf) values " +
                                         "({0},'{1}', '{2}', '{3}', '{4}', '{5}') SET IDENTITY_INSERT accionesdavidrangel off", fila[0], fila[1], fila[2], fila[3], fila[4], fila[5]);
-                                    dataAdapter = new SqlDataAdapter(setencia, con);
+                                    dataAdapter = new MySqlDataAdapter(setencia, con);
                                     dataAdapter.Fill(insertarDatos);
                                     con.Close();
                                 }                   
@@ -331,7 +331,7 @@ namespace PROG2EVA1_DavidRangel
                                 con.Open();
                                 DataTable modificarDatos = new DataTable();
                                 setencia = String.Format("update PERFILESDavidRangel set nombre='{1}', appat='{2}',apmat='{3}',clave='{4}',nivel={5} where rut = '{0}'", rut, nombre, paterno, materno, clave, nivelIngresar);
-                                dataAdapter = new SqlDataAdapter(setencia, con);
+                                dataAdapter = new MySqlDataAdapter(setencia, con);
                                 dataAdapter.Fill(modificarDatos);
                                 con.Close();
                             }
@@ -339,7 +339,7 @@ namespace PROG2EVA1_DavidRangel
                             MessageBox.Show("Usuario modificado");
                             actualizarTabla();
 
-                            if (rut == this.rut && nivelIngresar == 1)
+                            if (rut == this.rut && nivelIngresar == 2)
                             {
                                 MessageBox.Show("Ya no tienes permisos");
                                 this.DialogResult = DialogResult.No;
@@ -359,17 +359,17 @@ namespace PROG2EVA1_DavidRangel
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection(rutaBDD);
+            MySqlConnection con = new MySqlConnection(rutaBDD);
             con.Open();
             DataTable datos = new DataTable();
-            string setencia = String.Format("select * from PERFILESDavidRangel where clave = '{0}'", txtClaveEliminar.Text);
-            SqlDataAdapter dataAdapter = new SqlDataAdapter(setencia, con);
+            string setencia = String.Format("select * from PERFILESDavidRangel where clave = '{0}'", txtBusqueda.Text);
+            MySqlDataAdapter dataAdapter = new MySqlDataAdapter(setencia, con);
             dataAdapter.Fill(datos);
             con.Close();
 
             if (datos.Rows.Count > 0)
             {
-                eliminarRegistro(txtClaveEliminar.Text);
+                eliminarRegistro(txtBusqueda.Text);
             }
             else
             {
@@ -380,32 +380,27 @@ namespace PROG2EVA1_DavidRangel
 
         private void button1_Click(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection(rutaBDD);
+            MySqlConnection con = new MySqlConnection(rutaBDD);
             con.Open();
             DataTable datos = new DataTable();
-            string setencia = String.Format("select * from PERFILESDavidRangel where appat = '{0}'", txtPaterno.Text);
-            SqlDataAdapter dataAdapter = new SqlDataAdapter(setencia, con);
+
+            string selects = claveOApPat ?
+                "select * from PERFILESDavidRangel where appat like '%{0}%'"
+                :
+                "select * from PERFILESDavidRangel where clave = '{0}'";
+
+            string setencia = String.Format(selects, txtBusqueda.Text);
+            MySqlDataAdapter dataAdapter = new MySqlDataAdapter(setencia, con);
             dataAdapter.Fill(datos);
             con.Close();
 
             if (datos.Rows.Count > 0)
             {
-                dataGridView1.DataSource = datos;
-                dataGridView1.Columns[0].HeaderText = "Rut";
-                dataGridView1.Columns[1].HeaderText = "Nombre";
-                dataGridView1.Columns[2].HeaderText = "Apellido Pat";
-                dataGridView1.Columns[3].HeaderText = "Apellido Mat";
-                dataGridView1.Columns[4].HeaderText = "Clave";
-                dataGridView1.Columns[5].HeaderText = "Nivel";
-
-                for (int i = 0; i < dataGridView1.RowCount; i++)
-                {
-                    dataGridView1.Rows[i].ContextMenuStrip = contextMenuStrip1;
-                }
+                colocarDatosTabla(datos);
             }
             else
             {
-                MessageBox.Show("Perfiles con ese apellido no existen");
+                MessageBox.Show("Perfiles no existen");
             }
             arrTextBoxs.ToList().ForEach((x) => x.Clear());
         }
@@ -413,6 +408,22 @@ namespace PROG2EVA1_DavidRangel
         private void mostrarTodoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             actualizarTabla();
+        }
+
+        void colocarDatosTabla(DataTable datos)
+        {
+            dataGridView1.DataSource = datos;
+            dataGridView1.Columns[0].HeaderText = "Rut";
+            dataGridView1.Columns[1].HeaderText = "Nombre";
+            dataGridView1.Columns[2].HeaderText = "Apellido Pat";
+            dataGridView1.Columns[3].HeaderText = "Apellido Mat";
+            dataGridView1.Columns[4].HeaderText = "Clave";
+            dataGridView1.Columns[5].HeaderText = "Nivel";
+
+            for (int i = 0; i < dataGridView1.RowCount; i++)
+            {
+                dataGridView1.Rows[i].ContextMenuStrip = contextMenuStrip1;
+            }
         }
 
         string rutaArchivo = @"C:\TXTS\VIGIADAVIDRANGEL.txt";
@@ -436,11 +447,11 @@ namespace PROG2EVA1_DavidRangel
             sr.Close();
 
 
-            SqlConnection con = new SqlConnection(rutaBDD);
+            MySqlConnection con = new MySqlConnection(rutaBDD);
             con.Open();
             DataTable perfiles = new DataTable();
             string setencia = String.Format("select Rut, Nombre, ApPat, ApMat from PERFILESDavidRangel");
-            SqlDataAdapter dataAdapter = new SqlDataAdapter(setencia, con);
+            MySqlDataAdapter dataAdapter = new MySqlDataAdapter(setencia, con);
             dataAdapter.Fill(perfiles);
             con.Close();
 
@@ -475,6 +486,29 @@ namespace PROG2EVA1_DavidRangel
                 sw.WriteLine(fila);
             }
             sw.Close();
+        }
+
+        //true -> ApPat,
+        //false -> clave
+        bool claveOApPat = true;
+        private void claveToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            claveToolStripMenuItem.BackColor = Color.Gray;
+            claveToolStripMenuItem.ForeColor = Color.White;
+
+            ApPatToolStripMenuItem.BackColor = Color.White;
+            ApPatToolStripMenuItem.ForeColor = Color.Black;
+            claveOApPat = false;
+        }
+
+        private void ApPatToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            claveOApPat = true;
+            ApPatToolStripMenuItem.BackColor = Color.Gray;
+            ApPatToolStripMenuItem.ForeColor = Color.White;
+
+            claveToolStripMenuItem.BackColor = Color.White;
+            claveToolStripMenuItem.ForeColor = Color.Black;
         }
     }
 }
